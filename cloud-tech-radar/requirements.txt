@@ -1,0 +1,7 @@
+beautifulsoup4
+requests
+Pillow
+matplotlib
+PyYAML
+urllib3
+soupsieve
