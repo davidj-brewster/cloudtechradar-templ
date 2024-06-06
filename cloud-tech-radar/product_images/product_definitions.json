@@ -1,0 +1,142 @@
+{
+    "BigQuery": {
+        "name": "BigQuery",
+        "url": "https://cloud.google.com/bigquery",
+        "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQaUjwKum3ZzJ3RtnVYH7s9WKq4FtdFVBL2xYm887nHT_W2YkWlDdrPVbh72g&s"
+    },
+    "AI Platform": {
+        "name": "AI Platform",
+        "url": "https://cloud.google.com/ai-platform",
+        "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR1HBTcoEg37e7vbErbwW1m-0iE6ZlV4QXr6bmGlVzIWxGnX0w4yaykN0vvmaw&s"
+    },
+    "Dataflow": {
+        "name": "Dataflow",
+        "url": "https://cloud.google.com/dataflow",
+        "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ11EkDyvAncsdKYOTLbKoMzqIwLP_QAzXOUm5WdZPhwCm1HWGbEBV56h52PCU&s"
+    },
+    "Dataproc": {
+        "name": "Dataproc",
+        "url": "https://cloud.google.com/dataproc",
+        "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSg_fXwGdDp49O4W5r4kqrqfo6-eJx-d-9FU_H5QyYhkIAjZK3MjK6l4B9ZsMw&s"
+    },
+    "Cloud Storage": {
+        "name": "Cloud Storage",
+        "url": "https://cloud.google.com/storage",
+        "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS_SSxjQlcGPyujHaWz2F4oQ4Aei0zJBUEySLwPM4PS-Yu6BdWOuGCq_l2QGA&s"
+    },
+    "Filestore": {
+        "name": "Filestore",
+        "url": "https://cloud.google.com/filestore",
+        "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRHIVtSgCQk2gvD92_iRwyDmWVGCKW-SOoi2MP1hq2oIgP4idk-MgOJaNT37A&s"
+    },
+    "GKE": {
+        "name": "Google Kubernetes Engine (GKE)",
+        "url": "https://cloud.google.com/kubernetes-engine",
+        "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQGuu8ttuw2O_l62W_fOMEWUNOg8ZENwnYx17VtYYjUr5RYkrGwoO-Ay6nWAA&s"
+    },
+    "Compute Engine": {
+        "name": "Compute Engine",
+        "url": "https://cloud.google.com/compute",
+        "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT5d8bGLEo4n4NO4DY1YQmaAck6VJla2ijNye2HUgZRI5GtzskefR776ejSbg&s"
+    },
+    "Cloud Functions": {
+        "name": "Cloud Functions",
+        "url": "https://cloud.google.com/functions",
+        "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRsGAH3niAaiiR2QMNf1DcKuYFmal5tUPgfczXPIwigOK6ECnHZfyLp6HwBsYM&s"
+    },
+    "Cloud Run": {
+        "name": "Cloud Run",
+        "url": "https://cloud.google.com/run",
+        "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTFSLCLTJEOSfYPwAf_zVMMjxGxOsHHPS6QbcozhNkx7KPqP4qQ0aXiroNzng&s"
+    },
+    "Cloud Build": {
+        "name": "Cloud Build",
+        "url": "https://cloud.google.com/cloud-build",
+        "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSnDX3eRT7kDoJo3JQhEUZHfyCx2-rFxeVoACJaBTEAd0KoHM25JMYhNJ4UCmw&s"
+    },
+    "Artifact Registry": {
+        "name": "Artifact Registry",
+        "url": "https://cloud.google.com/artifact-registry",
+        "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSuMBpPHfWmdp7qH7dBaBP00fqRqI0CtRnD0zosSzlf6ImR6CTZ2XDroNzyCbo&s"
+    },
+    "Container Registry": {
+        "name": "Container Registry",
+        "url": "https://cloud.google.com/container-registry",
+        "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSKWUE1UmJOutNWZarGZWOlPzM52WsCYV9YmZ6nXcfCrGNKbEWucebPq7uN7Fw&s"
+    },
+    "Cloud SQL": {
+        "name": "Cloud SQL",
+        "url": "https://cloud.google.com/sql",
+        "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRje-IyAO94q71iYepk4Tj_meG3VV4PltG9LMarxYgRqDJddw8PHvMvMA61KQ&s"
+    },
+    "AlloyDB": {
+        "name": "AlloyDB",
+        "url": "https://cloud.google.com/alloydb",
+        "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRsJ0L9Fxbbcaneq_nH802UsGh7bA9SA5KPkwamCeIPh5X_hUwc1JL2k6V9Ojs&s"
+    },
+    "MongoDB Atlas": {
+        "name": "MongoDB Atlas",
+        "url": "https://www.mongodb.com/cloud/atlas",
+        "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTo1tNPrBYbrcPRzmLJDjIeaOvMoSwCEoDjUNPW9TaineGRiBIjhlhen_YTmw&s"
+    },
+    "Cloud Spanner": {
+        "name": "Cloud Spanner",
+        "url": "https://cloud.google.com/spanner",
+        "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSuRTno3jpz3H6OFSZVew0obDZLLkDI5_9GFwhpnk1NwP-03s9T22NYsJjb7g&s"
+    },
+    "Firestore": {
+        "name": "Firestore",
+        "url": "https://cloud.google.com/firestore",
+        "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcStYThxNmgkxSSf_tXRfXdkvxVGOAdsgcbbe_vlBE-KSQS790ibabBMkSmTsaA&s"
+    },
+    "GitHub": {
+        "name": "GitHub",
+        "url": "https://github.com",
+        "image_url": "https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png"
+    },
+    "GitHub Actions": {
+        "name": "GitHub Actions",
+        "url": "https://github.com/features/actions",
+        "image_url": "https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png"
+    },
+    "Jenkins": {
+        "name": "Jenkins",
+        "url": "https://www.jenkins.io",
+        "image_url": "https://www.jenkins.io/images/logos/jenkins/jenkins.png"
+    },
+    "Grafana OSS": {
+        "name": "Grafana OSS",
+        "url": "https://grafana.com/oss/grafana/",
+        "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ7JRkVBbiVNzOU2231kfbJHOQVte46Z5BgzgtFohaDquMEB-UEYM3B6ONO8g&s"
+    },
+    "Grafana Cloud": {
+        "name": "Grafana Cloud",
+        "url": "https://grafana.com/products/cloud/",
+        "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQZAZ5LwUPpIkVpy91r5O0jxmm6XD4mfvk6Vs90_Pqy_Je8HtsJBGAYtNij3H4&s"
+    },
+    "Prometheus": {
+        "name": "Prometheus",
+        "url": "https://prometheus.io",
+        "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTREBeDZCXLuqONtI-X-Lnt1ZZ-3nNx4frGPH5SbMztuEDYLy5a4x1bwTQYUpA&s"
+    },
+    "VictoriaMetrics OSS": {
+        "name": "VictoriaMetrics OSS",
+        "url": "https://victoriametrics.com/",
+        "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT4rg5Q5zJcNjcGW4vkDOa-alz-86Q1hJtUZ_wXk27oGwU7n6o40BaGc215dw&s"
+    },
+    "Gradle": {
+        "name": "Gradle",
+        "url": "https://gradle.org",
+        "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT80DXKdwKFwglBV3xAGym7oh5POIL07jPRKs0OPYoWwngLGwzD4VucCQlu1Jw&s"
+    },
+    "Harbor": {
+        "name": "Harbor",
+        "url": "https://goharbor.io",
+        "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTMHwDTYA8tDUC_QJTZGU0ny6ZKTGbbxTvVNE1pvV6k8maD00jVlXkjFgIJ1xg&s"
+    },
+    "Nexus Repository OSS": {
+        "name": "Nexus Repository OSS",
+        "url": "https://www.sonatype.com/products/repository-oss",
+        "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1-3D54bzglTQ_POeHYtd9XHh8PCrJ2qyFUZlJYhXnLiT4sBBTeDy3UqqZOg&s"
+    }
+}

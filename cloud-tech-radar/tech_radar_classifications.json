@@ -1,0 +1,39 @@
+{
+    "adopt": [
+        "BigQuery",
+        "GKE",
+        "Cloud Storage",
+        "Cloud SQL",
+        "Grafana OSS",
+        "Prometheus",
+        "Gradle",
+        "VictoriaMetrics OSS",
+        "GitHub",
+        "GitHub Actions"
+    ],
+    "evaluation": [
+        "AI Platform",
+        "Dataflow",
+        "Dataproc",
+        "AlloyDB",
+        "MongoDB Atlas",
+        "Harbor",
+        "Nexus Repository OSS",
+        "Grafana Cloud"
+    ],
+    "hold": [
+        "Cloud Spanner",
+        "Firestore",
+        "Container Registry"
+    ],
+    "retire": [
+        "Filestore",
+        "Compute Engine",
+        "Cloud Functions",
+        "Cloud Run",
+        "Cloud Build",
+        "Artifact Registry",
+        "Jenkins"
+    ]
+}
+
