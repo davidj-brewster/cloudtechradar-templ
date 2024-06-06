@@ -1,21 +1,21 @@
 # Custom outputs for this implementation
-cloud-tech-radar/product_images
+# cloud-tech-radar/product_images
 .vscode
-cloud-tech-radar/product_images/*
-cloud-tech-radar/*.json
-cloud-tech-radar/product_definitions.json
-cloud-tech-radar/product_definitions.json
-*.json
-product_images
-*.svg
-*.png
-*.jpg
-*.jpeg
+# cloud-tech-radar/product_images/*
+# cloud-tech-radar/*.json
+# cloud-tech-radar/product_definitions.json
+# cloud-tech-radar/product_definitions.json
+# *.json
+# product_images
+# *.svg
+# *.png
+# *.jpg
+# *.jpeg
 *.gif
 *.bmp
-*.mmd
-cloud-tech-radar/*.mmd
-cloud-tech-radar/*.png
+# *.mmd
+# cloud-tech-radar/*.mmd
+# cloud-tech-radar/*.png
 *.backup
 cloud-tech-radar/*.backup
 cloud-tech-radar/*.backup.json
