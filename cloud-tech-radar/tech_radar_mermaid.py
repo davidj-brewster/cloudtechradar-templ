@@ -8,18 +8,22 @@ with open('tech_radar_classifications.json', 'r') as f:
     tech_radar_classifications = json.load(f)
 
 # Define the categories
-categories = ["Data/ML", "Storage", "Compute/GKE", "Build Products"]
+categories = {
+    "Data/ML": "Data and Machine Learning",
+    "Storage": "Storage Solutions",
+    "Compute/GKE": "Compute and GKE",
+    "Build Products": "Build and Deployment"
+}
 
 # Create the mermaidJS output
 mermaid_output = """
 %%{init: {'theme': 'base', 'themeVariables': {'primaryColor': '#fff', 'edgeLabelBackground':'#fff', 'tertiaryColor': '#fff'}}}%%
-graph TB
-    classDef category fill:#f9f,stroke:#333,stroke-width:2px;
+graph TD
 """
 
 # Add products under each category
-for category in categories:
-    mermaid_output += f"\n    subgraph {category}\n        direction TB\n"
+for category, title in categories.items():
+    mermaid_output += f"\n    subgraph {title}\n        direction TB\n"
     for product in tech_radar_classifications.get(category, []):
         details = product_definitions[product]
         use_cases = ", ".join(details["example_use_cases"])
@@ -32,5 +36,4 @@ output_path = 'tech_radar.mmd'
 with open(output_path, 'w') as f:
     f.write(mermaid_output)
 
-print(f"Mermaid.js output saved to {output_path}")
 
