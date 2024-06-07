@@ -1,36 +1,37 @@
 mindmap
+style
 root((RG Cloud Radar))
-  (Data + ML)
+  (Data platform)
   ::icon(fa-solid fa-chart-pie)
                 BigQuery: Data Warehouse
                 AI Platform: ML + AI
                 Dataflow: Stream & Batch
                 Dataproc: Big Data
                 Composer: Scheduling
-  (Compute)
+  (Compute + Web platform)
     ::icon(fa-solid fa-microchip)
                 GKE: K8s clusters
-                Autopilot GKE: Run pods
+                Autopilot GKE*: Run pods
                 Compute Engine: Run VMs 
-                Cloud Functions: Serverless
-                Cloud Run: Containers
+                Cloud Functions*: Serverless
+                Cloud Run*: Containers
                 Consul/Envoy: Service Mesh
                 Cloudflare: Site delivery, workers,security
   (Storage)
         ::icon(fa-solid fa-database)
                 Cloud Storage: Object store
                 Cloud SQL: SQL DBs
-                AlloyDB: PostgreSQL DB
                 MongoDB Atlas: NoSQL DB   
-  (DevOps)
+  (DevOps + Enablement)
     ::icon(fa-brands fa-github)
-                Container Registry: docker
                 GitHub: Code & CI/CD
                 Terraform: Infra as code
+                Grafana: Dashboards, Alerts
+                VictoriaMetrics: Service metrics
+                Elastic Stack: Logs
                 Gradle: Builds, releases
                 Harbor: Artifact proxy
-                Nexus*: Artifact repo
-                Grafana: Dashboards, Alerts
-                VictoriaMetrics: Instrumentation
-                Elastic Stack: Logs
+                Nexus: Artifact repo
+                Container Registry: docker
+
 
