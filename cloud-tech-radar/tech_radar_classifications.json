@@ -1,39 +1,41 @@
 {
     "adopt": [
         "BigQuery",
-        "GKE",
+        "Kubernetes Engine GKE",
         "Cloud Storage",
         "Cloud SQL",
         "Grafana OSS",
         "Prometheus",
         "Gradle",
-        "VictoriaMetrics OSS",
+        "VictoriaMetrics",
         "GitHub",
-        "GitHub Actions"
+        "MongoDB Atlas",
+        "Terraform+ArgoCD"
     ],
     "evaluation": [
         "AI Platform",
         "Dataflow",
         "Dataproc",
-        "AlloyDB",
-        "MongoDB Atlas",
         "Harbor",
-        "Nexus Repository OSS",
-        "Grafana Cloud"
+        "Nexus",
+        "GKE Autopilot"
     ],
     "hold": [
         "Cloud Spanner",
+        "Grafana Cloud",
+        "AlloyDB",
         "Firestore",
-        "Container Registry"
+        "Container Registry",
+        "Compute Engine",
+        "Cloud Run",
+        "Cloud Build",
+        "Jenkins"
     ],
     "retire": [
         "Filestore",
-        "Compute Engine",
         "Cloud Functions",
-        "Cloud Run",
-        "Cloud Build",
         "Artifact Registry",
-        "Jenkins"
+        "Graphite/StatsD"
     ]
 }
 

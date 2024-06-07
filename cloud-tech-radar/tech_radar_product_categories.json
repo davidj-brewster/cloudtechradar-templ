@@ -2,5 +2,6 @@
     "Data / ML": "Data and Machine Learning",
     "Storage": "Storage Solutions",
     "Compute": "Compute and GKE",
-    "Build / CI": "Build and Deployment"
+    "DevOps": "Build and Deployment",
+    "Observability": "Monitoring, alerting, logs"
 }

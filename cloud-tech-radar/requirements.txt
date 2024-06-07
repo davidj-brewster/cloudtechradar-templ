@@ -8,3 +8,4 @@ soupsieve
 pandas
 fuzzywuzzy
 python-Levenshtein
+numpy

@@ -11,7 +11,7 @@
             "Business intelligence",
             "Big data"
         ],
-        "category": "Data / ML"
+        "category": "Data Platform"
     },
     "AI Platform": {
         "name": "AI Platform",
@@ -25,7 +25,7 @@
             "AI workflows",
             "Model training"
         ],
-        "category": "Data / ML"
+        "category": "Data Platform"
     },
     "Dataflow": {
         "name": "Dataflow",
@@ -39,7 +39,7 @@
             "Real-time ETL",
             "Data pipelines"
         ],
-        "category": "Data / ML"
+        "category": "Data Platform"
     },
     "Dataproc": {
         "name": "Dataproc",
@@ -53,13 +53,13 @@
             "Data transformation",
             "ETL jobs"
         ],
-        "category": "Data / ML"
+        "category": "Data Platform"
     },
     "Cloud Storage": {
         "name": "Cloud Storage",
         "url": "https://cloud.google.com/storage",
         "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS_SSxjQlcGPyujHaWz2F4oQ4Aei0zJBUEySLwPM4PS-Yu6BdWOuGCq_l2QGA&s",
-        "file_path": "product_images/Cloud Storage.jpeg",
+        "file_path": "product_images/Cloud Storage and Databases.jpeg",
         "keywords": "scalable object storage",
         "description": "Secure, durable, and scalable object storage",
         "example_use_cases": [
@@ -71,7 +71,7 @@
             "Content Acquisition",
             "Adhoc data usecases"
         ],
-        "category": "Storage"
+        "category": "Storage and Databases"
     },
     "Filestore": {
         "name": "Filestore",
@@ -79,21 +79,21 @@
         "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRHIVtSgCQk2gvD92_iRwyDmWVGCKW-SOoi2MP1hq2oIgP4idk-MgOJaNT37A&s",
         "file_path": "product_images/Filestore.jpeg",
         "keywords": "file storage",
-        "description": "High performance file storage for applications",
+        "description": "High performance POSIX filesystem storage",
         "example_use_cases": [
             "Filesystem structure",
             "NFS storage",
             "Application data"
         ],
-        "category": "Storage"
+        "category": "Storage and Databases"
     },
     "GKE": {
-        "name": "Google Kubernetes Engine (GKE)",
+        "name": "Kubernetes Engine GKE",
         "url": "https://cloud.google.com/kubernetes-engine",
         "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQGuu8ttuw2O_l62W_fOMEWUNOg8ZENwnYx17VtYYjUr5RYkrGwoO-Ay6nWAA&s",
         "file_path": "product_images/GKE.png",
         "keywords": "Kubernetes clusters",
-        "description": "Service for running and managing Kubernetes clusters",
+        "description": "Running and managing Kubernetes clusters",
         "example_use_cases": [
             "Realtime compute",
             "Batch processing compute",
@@ -105,22 +105,22 @@
             "Moderately-erratic request patterns",
             "Larger workloads"
         ],
-        "category": "Compute"
+        "category": "Compute and Web Platform"
     },
     "GKE Autopilot": {
-        "name": "Google Kubernetes Engine (GKE) Autopilot",
+        "name": "GKE Autopilot",
         "url": "https://cloud.google.com/kubernetes-engine",
         "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQGuu8ttuw2O_l62W_fOMEWUNOg8ZENwnYx17VtYYjUr5RYkrGwoO-Ay6nWAA&s",
-        "file_path": "product_images/GKE.png",
+        "file_path": "product_images/GKE Autopilot.png",
         "keywords": "Managed kubernetes",
-        "description": "Cluster, Pod and container environment with reduced management overhead",
+        "description": "Cluster, Pod and container environment with reduced overhead",
         "example_use_cases": [
             "Flink compute",
             "Scheduled computations",
             "Unpredictable load-patterns",
             "Smaller workloads"
         ],
-        "category": "Compute"
+        "category": "Compute and Web Platform"
     },
     "Compute Engine": {
         "name": "Compute Engine",
@@ -128,15 +128,15 @@
         "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT5d8bGLEo4n4NO4DY1YQmaAck6VJla2ijNye2HUgZRI5GtzskefR776ejSbg&s",
         "file_path": "product_images/Compute Engine.png",
         "keywords": "virtual machines",
-        "description": "Scalable virtual machines for compute and memory intensive workloads",
+        "description": "Scalable virtual machines for compute workloads",
         "example_use_cases": [
             "Virtual machines",
-            "Compute workloads",
+            "Compute and Web Platform workloads",
             "Custom VMs",
             "Spot instances",
             "Vertical scaling workloads"
         ],
-        "category": "Compute"
+        "category": "Compute and Web Platform"
     },
     "Cloud Functions": {
         "name": "Cloud Functions",
@@ -144,12 +144,12 @@
         "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRsGAH3niAaiiR2QMNf1DcKuYFmal5tUPgfczXPIwigOK6ECnHZfyLp6HwBsYM&s",
         "file_path": "product_images/Cloud Functions.png",
         "keywords": "serverless functions",
-        "description": "Event-driven platform to run code without managing servers",
+        "description": "Event-driven code platform without managing servers",
         "example_use_cases": [
             "Serverless functions",
             "Event-driven apps"
         ],
-        "category": "Compute"
+        "category": "Compute and Web Platform"
     },
     "Cloud Run": {
         "name": "Cloud Run",
@@ -157,13 +157,13 @@
         "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTFSLCLTJEOSfYPwAf_zVMMjxGxOsHHPS6QbcozhNkx7KPqP4qQ0aXiroNzng&s",
         "file_path": "product_images/Cloud Run.png",
         "keywords": "Kubernetes containers",
-        "description": "Service to run stateless containers on compute instances that scale on demand",
+        "description": "Run stateless containers on compute instances that scale on demand",
         "example_use_cases": [
             "Smaller stateless services",
             "Developer branch environments",
             "Canary deployments"
         ],
-        "category": "Compute"
+        "category": "Compute and Web Platform"
     },
     "Cloud Build": {
         "name": "Cloud Build",
@@ -171,14 +171,14 @@
         "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSnDX3eRT7kDoJo3JQhEUZHfyCx2-rFxeVoACJaBTEAd0KoHM25JMYhNJ4UCmw&s",
         "file_path": "product_images/Cloud Build.png",
         "keywords": "CI/CD",
-        "description": "Integrated service for building, testing, and deploying code",
+        "description": "Building, testing, and deploying code to GCP/GKE",
         "example_use_cases": [
             "Continuous integration",
             "Continuous deployment",
             "Build and deploy automation",
             "GKE and Cloud Run"
         ],
-        "category": "Build / CI"
+        "category": "DevOps"
     },
     "Artifact Registry": {
         "name": "Artifact Registry",
@@ -186,13 +186,13 @@
         "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSuMBpPHfWmdp7qH7dBaBP00fqRqI0CtRnD0zosSzlf6ImR6CTZ2XDroNzyCbo&s",
         "file_path": "product_images/Artifact Registry.png",
         "keywords": "artifact storage",
-        "description": "Store and manage build artifacts and dependencies",
+        "description": "Manage build artifacts and dependencies",
         "example_use_cases": [
             "Artifact storage",
             "Dependency management",
             "Container registry"
         ],
-        "category": "Build / CI"
+        "category": "DevOps"
     },
     "Container Registry": {
         "name": "Container Registry",
@@ -200,13 +200,13 @@
         "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSKWUE1UmJOutNWZarGZWOlPzM52WsCYV9YmZ6nXcfCrGNKbEWucebPq7uN7Fw&s",
         "file_path": "product_images/Container Registry.jpeg",
         "keywords": "Docker artifact registry",
-        "description": "Private Docker image storage on Google Cloud",
+        "description": "Private Docker image storage on GCP",
         "example_use_cases": [
             "Docker image registry",
             "Container image storage",
             "Integrated deployment GKE/Cloud Run"
         ],
-        "category": "Build / CI"
+        "category": "DevOps"
     },
     "Cloud SQL": {
         "name": "Cloud SQL",
@@ -214,14 +214,14 @@
         "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRje-IyAO94q71iYepk4Tj_meG3VV4PltG9LMarxYgRqDJddw8PHvMvMA61KQ&s",
         "file_path": "product_images/Cloud SQL.jpeg",
         "keywords": "SQL databases",
-        "description": "Relational database service with high availability",
+        "description": "Relational database managed service",
         "example_use_cases": [
             "SQL databases",
             "Transactional apps",
             "Relational data",
             "Datastore for services"
         ],
-        "category": "Storage"
+        "category": "Storage and Databases"
     },
     "AlloyDB": {
         "name": "AlloyDB",
@@ -229,12 +229,12 @@
         "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRsJ0L9Fxbbcaneq_nH802UsGh7bA9SA5KPkwamCeIPh5X_hUwc1JL2k6V9Ojs&s",
         "file_path": "product_images/AlloyDB.png",
         "keywords": "PostgreSQL databases",
-        "description": "PostgreSQL-compatible relational database service",
+        "description": "PostgreSQL-compatible relational database",
         "example_use_cases": [
             "PostgreSQL databases",
             "Financial transactions"
         ],
-        "category": "Storage"
+        "category": "Storage and Databases"
     },
     "MongoDB Atlas": {
         "name": "MongoDB Atlas",
@@ -242,13 +242,13 @@
         "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTo1tNPrBYbrcPRzmLJDjIeaOvMoSwCEoDjUNPW9TaineGRiBIjhlhen_YTmw&s",
         "file_path": "product_images/MongoDB Atlas.png",
         "keywords": "NoSQL databases",
-        "description": "Managed MongoDB service for modern applications",
+        "description": "Managed MongoDB service",
         "example_use_cases": [
             "NoSQL databases",
             "Document storage",
             "Scalable data and apps"
         ],
-        "category": "Storage"
+        "category": "Storage and Databases"
     },
     "Cloud Spanner": {
         "name": "Cloud Spanner",
@@ -256,12 +256,12 @@
         "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSuRTno3jpz3H6OFSZVew0obDZLLkDI5_9GFwhpnk1NwP-03s9T22NYsJjb7g&s",
         "file_path": "product_images/Cloud Spanner.png",
         "keywords": "global databases",
-        "description": "Horizontally scalable, strongly consistent relational database",
+        "description": "Globally scalable relational DB",
         "example_use_cases": [
             "Global requirement",
             "High availability"
         ],
-        "category": "Storage"
+        "category": "Storage and Databases"
     },
     "Firestore": {
         "name": "Firestore",
@@ -275,7 +275,7 @@
             "Low-latency webapps & APIs",
             "Real-time data"
         ],
-        "category": "Storage"
+        "category": "Storage and Databases"
     },
     "GitHub": {
         "name": "GitHub",
@@ -289,23 +289,7 @@
             "Code reviews",
             "Infrastructure configuration"
         ],
-        "category": "Build / CI"
-    },
-    "GitHub Actions": {
-        "name": "GitHub Actions",
-        "url": "https://github.com/features/actions",
-        "image_url": "https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png",
-        "file_path": "product_images/GitHub Actions.png",
-        "keywords": "CI/CD workflows",
-        "description": "Automation service for CI/CD workflows on GitHub",
-        "example_use_cases": [
-            "CI/CD pipelines",
-            "Automated testing",
-            "Software builds",
-            "Self-hosted runners",
-            "Deployments"
-        ],
-        "category": "Build / CI"
+        "category": "DevOps"
     },
     "Jenkins": {
         "name": "Jenkins",
@@ -319,7 +303,7 @@
             "Continuous delivery",
             "Automated builds"
         ],
-        "category": "Build / CI"
+        "category": "DevOps"
     },
     "Grafana OSS": {
         "name": "Grafana OSS",
@@ -342,7 +326,7 @@
         "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQZAZ5LwUPpIkVpy91r5O0jxmm6XD4mfvk6Vs90_Pqy_Je8HtsJBGAYtNij3H4&s",
         "file_path": "product_images/Grafana Cloud.jpeg",
         "keywords": "managed Cloud observability",
-        "description": "Paid service for storing and discovering metrics, logs, and traces plus alerting",
+        "description": "Enterprise service for storing and discovering metrics, logs, and traces plus alerting",
         "example_use_cases": [
             "Infrastructure and service Monitoring",
             "Dashboards",
@@ -365,8 +349,8 @@
         ],
         "category": "Observability"
     },
-    "VictoriaMetrics OSS": {
-        "name": "VictoriaMetrics OSS",
+    "VictoriaMetrics": {
+        "name": "VictoriaMetrics",
         "url": "https://victoriametrics.com/",
         "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT4rg5Q5zJcNjcGW4vkDOa-alz-86Q1hJtUZ_wXk27oGwU7n6o40BaGc215dw&s",
         "file_path": "product_images/VictoriaMetrics OSS.png",
@@ -395,7 +379,7 @@
             "Snapshot releases",
             "Deployment releases"
         ],
-        "category": "Build / CI"
+        "category": "DevOps"
     },
     "Harbor": {
         "name": "Harbor",
@@ -409,10 +393,10 @@
             "Gradle builds",
             "Vulnerability scanning"
         ],
-        "category": "Build / CI"
+        "category": "DevOps"
     },
-    "Nexus Repository OSS": {
-        "name": "Nexus Repository OSS",
+    "Nexus": {
+        "name": "Nexus",
         "url": "https://www.sonatype.com/products/repository-oss",
         "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1-3D54bzglTQ_POeHYtd9XHh8PCrJ2qyFUZlJYhXnLiT4sBBTeDy3UqqZOg&s",
         "file_path": "product_images/Nexus Repository OSS.png",
@@ -427,6 +411,31 @@
             "Docker images",
             "Helm charts"
         ],
-        "category": "Build / CI"
+        "category": "DevOps"
+    },
+    "Graphite/StatsD": {
+        "name": "Graphite/StatsD",
+        "url": "https://www.sonatype.com/products/repository-oss",
+        "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1-3D54bzglTQ_POeHYtd9XHh8PCrJ2qyFUZlJYhXnLiT4sBBTeDy3UqqZOg&s",
+        "file_path": "",
+        "keywords": "metrics monitoring",
+        "description": "Legacy metrics solution still used by community",
+        "example_use_cases": [
+            "Commmunity"
+        ],
+        "category": "Observability"
+    },
+    "Terraform+ArgoCD": {
+        "name": "Terraform+ArgoCD",
+        "url": "",
+        "image_url": "",
+        "file_path": "",
+        "keywords": "infra-as-code",
+        "description": "Infrastructure as code automation tooling",
+        "example_use_cases": [
+            "Clusters",
+            "GKE environments"
+        ],
+        "category": "DevOps"
     }
 }
