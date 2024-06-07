@@ -2,7 +2,6 @@
 ```mermaid
 %%{init: {'theme': 'base', 'themeVariables': {'primaryColor': '#fff', 'edgeLabelBackground':'#fff', 'tertiaryColor': '#fff'}}}%%
 graph TD
-
     subgraph "Data and Machine Learning"
         direction TB
         BigQuery["BigQuery\nURL: https://cloud.google.com/bigquery\nDescription: Highly scalable, serverless data warehouse for big data\nUse Cases: Data analytics, Business intelligence, Big data"]
@@ -10,7 +9,6 @@ graph TD
         Dataflow["Dataflow\nURL: https://cloud.google.com/dataflow\nDescription: Service for stream and batch data processing\nUse Cases: Data processing, Real-time ETL, Data pipelines"]
         Dataproc["Dataproc\nURL: https://cloud.google.com/dataproc\nDescription: Spark and Hadoop service for big data processing\nUse Cases: Big data analytics, Data transformation, ETL jobs"]
     end
-
     subgraph "Storage Solutions"
         direction TB
         Cloud_Storage["Cloud Storage\nURL: https://cloud.google.com/storage\nDescription: Secure, durable, and scalable object storage\nUse Cases: Object storage, Archival/backup storage, Batch data, Flow outputs, Assets/Derivatives, Content Acquisition, Adhoc data usecases"]
@@ -21,7 +19,6 @@ graph TD
         Cloud_Spanner["Cloud Spanner\nURL: https://cloud.google.com/spanner\nDescription: Horizontally scalable, strongly consistent relational database\nUse Cases: Global requirement, High availability"]
         Firestore["Firestore\nURL: https://cloud.google.com/firestore\nDescription: Document database for automatic scaling and performance\nUse Cases: Mobile apps, Low-latency webapps & APIs, Real-time data"]
     end
-
     subgraph "Compute and GKE"
         direction TB
         GKE["Google Kubernetes Engine (GKE)\nURL: https://cloud.google.com/kubernetes-engine\nDescription: Service for running and managing Kubernetes clusters\nUse Cases: Realtime compute, Batch processing compute, Horizontal scaling services, Scheduled compute jobs, Service-mesh microservices, Vertical scaling services, Predictable request-patterns, Moderately-erratic request patterns, Larger workloads"]
@@ -30,7 +27,6 @@ graph TD
         Cloud_Functions["Cloud Functions\nURL: https://cloud.google.com/functions\nDescription: Event-driven platform to run code without managing servers\nUse Cases: Serverless functions, Event-driven apps"]
         Cloud_Run["Cloud Run\nURL: https://cloud.google.com/run\nDescription: Service to run stateless containers on compute instances that scale on demand\nUse Cases: Smaller stateless services, Developer branch environments, Canary deployments"]
     end
-
     subgraph "Build and Deployment"
         direction TB
         Cloud_Build["Cloud Build\nURL: https://cloud.google.com/cloud-build\nDescription: Integrated service for building, testing, and deploying code\nUse Cases: Continuous integration, Continuous deployment, Build and deploy automation, GKE and Cloud Run"]
@@ -43,5 +39,4 @@ graph TD
         Harbor["Harbor\nURL: https://goharbor.io\nDescription: Push-style proxy to upload docker images to an artifact registry\nUse Cases: Developer artifact uploads, Gradle builds, Vulnerability scanning"]
         Nexus_Repository_OSS["Nexus Repository OSS\nURL: https://www.sonatype.com/products/repository-oss\nDescription: Artifact repository manager for binaries and build artifacts\nUse Cases: Artifact management, Dependency storage, Repository management, Python packages, Java artifacts, Docker images, Helm charts"]
     end
-
 ```
