@@ -11,22 +11,22 @@ with open('tech_radar_product_categories.json', 'r') as f:
 mermaid_output = """
 ```mermaid
 %%{init: {'theme': 'base', 'themeVariables': {'primaryColor': '#fff', 'edgeLabelBackground':'#fff', 'tertiaryColor': '#fff'}}}%%
-graph TD
+graph TD;
 """
 
 # Add products under each category
 for category, title in category_titles.items():
     print(f"Processing category: {category} -> {title}")
-    mermaid_output += f"\n    subgraph \"{title}\"\n        direction TB\n"
+    mermaid_output += f"\n    subgraph \"{title}\"\n        direction TB;\n"
     for product_key, product in product_definitions.items():
         if product.get('category') == category:
             use_cases = ", ".join(product["example_use_cases"])
             # Unique identifier for each node
             node_id = product_key.replace(" ", "_").replace("/", "_").replace("&", "and")
-            product_info = f"{node_id}[\"{product['name']}\\nURL: {product['url']}\\nDescription: {product['description']}\\nUse Cases: {use_cases}\"]"
+            product_info = f"{node_id}[\"{product['name']}\\nURL: {product['url']}\\nDescription: {product['description']}\\nUse Cases: {use_cases}\"];"
             mermaid_output += f"        {product_info}\n"
             print(f"  Added product: {product_key}")
-    mermaid_output += "    end\n"
+    mermaid_output += "    end;\n"
 
 # Close the mermaid code block
 mermaid_output += "\n```"
@@ -37,5 +37,4 @@ with open(output_path, 'w') as f:
     f.write(mermaid_output)
 
 print(f"Mermaid.js output saved to {output_path}")
-
 
