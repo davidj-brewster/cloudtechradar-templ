@@ -7,13 +7,10 @@ with open('product_definitions.json', 'r') as f:
 with open('tech_radar_classifications.json', 'r') as f:
     tech_radar_classifications = json.load(f)
 
-# Define the categories
-categories = {
-    "Data/ML": "Data and Machine Learning",
-    "Storage": "Storage Solutions",
-    "Compute/GKE": "Compute and GKE",
-    "Build Products": "Build and Deployment"
-}
+with open('tech_radar_product_categories.json', 'r') as f
+    categories = json.load(f)
+
+
 
 # Create the mermaidJS output
 mermaid_output = """
@@ -23,8 +20,10 @@ graph TD
 
 # Add products under each category
 for category, title in categories.items():
+    print(category, title)
     mermaid_output += f"\n    subgraph {title}\n        direction TB\n"
     for product in tech_radar_classifications.get(category, []):
+        print (product)
         details = product_definitions[product]
         use_cases = ", ".join(details["example_use_cases"])
         product_info = f"{product}['{details['name']}\\nURL: {details['url']}\\nUse Cases: {use_cases}']"

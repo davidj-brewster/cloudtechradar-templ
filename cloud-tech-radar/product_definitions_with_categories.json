@@ -1,0 +1,234 @@
+{
+    "BigQuery":{
+        "name":"BigQuery",
+        "category":"Data \/ ML",
+        "url":"https:\/\/cloud.google.com\/bigquery",
+        "keywords":"data warehouse",
+        "description":"Highly scalable, serverless data warehouse for big data",
+        "example_use_cases":"Data analytics, Business intelligence, Big data"
+    },
+    "AI Platform":{
+        "name":"AI Platform",
+        "category":"Data \/ ML",
+        "url":"https:\/\/cloud.google.com\/ai-platform",
+        "keywords":"machine learning models",
+        "description":"Service for building and deploying machine learning models",
+        "example_use_cases":"Machine learning, AI workflows, Model training"
+    },
+    "Dataflow":{
+        "name":"Dataflow",
+        "category":"Data \/ ML",
+        "url":"https:\/\/cloud.google.com\/dataflow",
+        "keywords":"stream and batch processing",
+        "description":"Service for stream and batch data processing",
+        "example_use_cases":"Data processing, Real-time ETL, Data pipelines"
+    },
+    "Dataproc":{
+        "name":"Dataproc",
+        "category":"Data \/ ML",
+        "url":"https:\/\/cloud.google.com\/dataproc",
+        "keywords":"big data processing",
+        "description":"Spark and Hadoop service for big data processing",
+        "example_use_cases":"Big data analytics, Data transformation, ETL jobs"
+    },
+    "Cloud Storage":{
+        "name":"Cloud Storage",
+        "category":"Storage",
+        "url":"https:\/\/cloud.google.com\/storage",
+        "keywords":"scalable object storage",
+        "description":"Secure, durable, and scalable object storage",
+        "example_use_cases":"Object storage, Archival\/backup storage, Batch data, Flow outputs, Assets\/Derivatives, Content Acquisition, Adhoc data usecases"
+    },
+    "Filestore":{
+        "name":"Filestore",
+        "category":"Storage",
+        "url":"https:\/\/cloud.google.com\/filestore",
+        "keywords":"file storage",
+        "description":"High performance file storage for applications",
+        "example_use_cases":"Filesystem structure, NFS storage, Application data"
+    },
+    "GKE":{
+        "name":"Google Kubernetes Engine (GKE)",
+        "category":"Compute",
+        "url":"https:\/\/cloud.google.com\/kubernetes-engine",
+        "keywords":"Kubernetes clusters",
+        "description":"Service for running and managing Kubernetes clusters",
+        "example_use_cases":"Realtime compute, Batch processing compute, Horizontal scaling services, Scheduled compute jobs, Service-mesh microservices, Vertical scaling services, Predictable request-patterns, Moderately-erratic request patterns, Larger workloads"
+    },
+    "GKE Autopilot":{
+        "name":"Google Kubernetes Engine (GKE) Autopilot",
+        "category":"Compute",
+        "url":"https:\/\/cloud.google.com\/kubernetes-engine",
+        "keywords":"Managed kubernetes",
+        "description":"Cluster, Pod and container environment with reduced management overhead",
+        "example_use_cases":"Flink compute, Scheduled computations, Unpredictable load-patterns, Smaller workloads"
+    },
+    "Compute Engine":{
+        "name":"Compute Engine",
+        "category":"Compute",
+        "url":"https:\/\/cloud.google.com\/compute",
+        "keywords":"virtual machines",
+        "description":"Scalable virtual machines for compute and memory intensive workloads",
+        "example_use_cases":"Virtual machines, Compute workloads, Custom VMs, Spot instances, Vertical scaling workloads"
+    },
+    "Cloud Functions":{
+        "name":"Cloud Functions",
+        "category":"Storage",
+        "url":"https:\/\/cloud.google.com\/functions",
+        "keywords":"serverless functions",
+        "description":"Event-driven platform to run code without managing servers",
+        "example_use_cases":"Serverless functions, Event-driven apps"
+    },
+    "Cloud Run":{
+        "name":"Cloud Run",
+        "category":"Compute",
+        "url":"https:\/\/cloud.google.com\/run",
+        "keywords":"Kubernetes containers",
+        "description":"Service to run stateless containers on compute instances that scale on demand",
+        "example_use_cases":"Smaller stateless services, Developer branch environments, Canary deployments"
+    },
+    "Cloud Build":{
+        "name":"Cloud Build",
+        "category":"Build \/ CI",
+        "url":"https:\/\/cloud.google.com\/cloud-build",
+        "keywords":"CI\/CD",
+        "description":"Integrated service for building, testing, and deploying code",
+        "example_use_cases":"Continuous integration, Continuous deployment, Build and deploy automation, GKE and Cloud Run"
+    },
+    "Artifact Registry":{
+        "name":"Artifact Registry",
+        "category":"Build \/ CI",
+        "url":"https:\/\/cloud.google.com\/artifact-registry",
+        "keywords":"artifact storage",
+        "description":"Store and manage build artifacts and dependencies",
+        "example_use_cases":"Artifact storage, Dependency management, Container registry"
+    },
+    "Container Registry":{
+        "name":"Container Registry",
+        "category":"Storage",
+        "url":"https:\/\/cloud.google.com\/container-registry",
+        "keywords":"Docker artifact registry",
+        "description":"Private Docker image storage on Google Cloud",
+        "example_use_cases":"Docker image registry, Container image storage, Integrated deployment GKE\/Cloud Run"
+    },
+    "Cloud SQL":{
+        "name":"Cloud SQL",
+        "category":"Storage",
+        "url":"https:\/\/cloud.google.com\/sql",
+        "keywords":"SQL databases",
+        "description":"Relational database service with high availability",
+        "example_use_cases":"SQL databases, Transactional apps, Relational data, Datastore for services"
+    },
+    "AlloyDB":{
+        "name":"AlloyDB",
+        "category":"Storage",
+        "url":"https:\/\/cloud.google.com\/alloydb",
+        "keywords":"PostgreSQL databases",
+        "description":"PostgreSQL-compatible relational database service",
+        "example_use_cases":"PostgreSQL databases, Financial transactions"
+    },
+    "MongoDB Atlas":{
+        "name":"MongoDB Atlas",
+        "category":"Storage",
+        "url":"https:\/\/www.mongodb.com\/cloud\/atlas",
+        "keywords":"NoSQL databases",
+        "description":"Managed MongoDB service for modern applications",
+        "example_use_cases":"NoSQL databases, Document storage, Scalable data and apps"
+    },
+    "Cloud Spanner":{
+        "name":"Cloud Spanner",
+        "category":"Storage",
+        "url":"https:\/\/cloud.google.com\/spanner",
+        "keywords":"global databases",
+        "description":"Horizontally scalable, strongly consistent relational database",
+        "example_use_cases":"Global requirement, High availability"
+    },
+    "Firestore":{
+        "name":"Firestore",
+        "category":"Storage",
+        "url":"https:\/\/cloud.google.com\/firestore",
+        "keywords":"NoSQL document database",
+        "description":"Document database for automatic scaling and performance",
+        "example_use_cases":"Mobile apps, Low-latency webapps & APIs, Real-time data"
+    },
+    "GitHub":{
+        "name":"GitHub",
+        "category":"Storage",
+        "url":"https:\/\/github.com",
+        "keywords":"code hosting",
+        "description":"Code hosting platform for version control and collaboration",
+        "example_use_cases":"Source-code version control, Code reviews, Infrastructure configuration"
+    },
+    "GitHub Actions":{
+        "name":"GitHub Actions",
+        "category":"Storage",
+        "url":"https:\/\/github.com\/features\/actions",
+        "keywords":"CI\/CD workflows",
+        "description":"Automation service for CI\/CD workflows on GitHub",
+        "example_use_cases":"CI\/CD pipelines, Automated testing, Software builds, Self-hosted runners, Deployments"
+    },
+    "Jenkins":{
+        "name":"Jenkins",
+        "category":"Build \/ CI",
+        "url":"https:\/\/www.jenkins.io",
+        "keywords":"automation server",
+        "description":"Automation server for CI\/CD pipelines defined in code",
+        "example_use_cases":"Continuous integration, Continuous delivery, Automated builds"
+    },
+    "Grafana OSS":{
+        "name":"Grafana OSS",
+        "category":"Observability",
+        "url":"https:\/\/grafana.com\/oss\/grafana\/",
+        "keywords":"monitoring dashboards",
+        "description":"Open-source platform for monitoring and observability",
+        "example_use_cases":"Dashboards, Exploring metrics logs and events, Infrastructure and service monitoring, Alert rules and routing"
+    },
+    "Grafana Cloud":{
+        "name":"Grafana Cloud",
+        "category":"Observability",
+        "url":"https:\/\/grafana.com\/products\/cloud\/",
+        "keywords":"managed Cloud observability",
+        "description":"Paid service for storing and discovering metrics, logs, and traces plus alerting",
+        "example_use_cases":"Infrastructure and service Monitoring, Dashboards, Exploring metrics, logs and events, Alert rules and routing"
+    },
+    "Prometheus":{
+        "name":"Prometheus",
+        "category":"Observability",
+        "url":"https:\/\/prometheus.io",
+        "keywords":"metrics monitoring alerting",
+        "description":"Monitoring and alerting toolkit for metrics",
+        "example_use_cases":"Metrics collection, Alerting, Monitoring"
+    },
+    "VictoriaMetrics OSS":{
+        "name":"VictoriaMetrics OSS",
+        "category":"Observability",
+        "url":"https:\/\/victoriametrics.com\/",
+        "keywords":"prometheus compatible metrics",
+        "description":"Open-source time series database for metrics and alerts, compatible with PromQL",
+        "example_use_cases":"High-cardinality metrics, Service\/infra metrics, Dashboards, Metric storage and retention, Alerting via Grafana"
+    },
+    "Gradle":{
+        "name":"Gradle",
+        "category":"Build \/ CI",
+        "url":"https:\/\/gradle.org",
+        "keywords":"build automation",
+        "description":"Build automation tooling for Java and other languages",
+        "example_use_cases":"Build automation, Dependency management, Java builds, Snapshot releases, Deployment releases"
+    },
+    "Harbor":{
+        "name":"Harbor",
+        "category":"Build \/ CI",
+        "url":"https:\/\/goharbor.io",
+        "keywords":"docker container registry",
+        "description":"Push-style proxy to upload docker images to an artifact registry",
+        "example_use_cases":"Developer artifact uploads, Gradle builds, Vulnerability scanning"
+    },
+    "Nexus Repository OSS":{
+        "name":"Nexus Repository OSS",
+        "category":"Build \/ CI",
+        "url":"https:\/\/www.sonatype.com\/products\/repository-oss",
+        "keywords":"artifact repository",
+        "description":"Artifact repository manager for binaries and build artifacts",
+        "example_use_cases":"Artifact management, Dependency storage, Repository management, Python packages, Java artifacts, Docker images, Helm charts"
+    }
+}

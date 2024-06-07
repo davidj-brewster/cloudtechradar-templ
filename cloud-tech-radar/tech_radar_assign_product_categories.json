@@ -1,0 +1,65 @@
+import json
+import pandas as pd
+from fuzzywuzzy import fuzz
+
+# Load product definitions
+with open('product_definitions.json', 'r') as f:
+    product_definitions = json.load(f)
+
+# Define the categories and keywords
+categories = {
+    "Data / ML": ["big data", "data warehouse", "data processing", "machine learning", "artificial", "intelligence", "analytics", "machine learning", "flows", "batch processing", "natural language", "models", "neural", "data analytics","business intelligence"],
+    "Storage": ["storage", "backup", "objects", "files", "database", "relational database", "NoSQL database", "datastore", "persistent", "volumes", "redundancy", "filesystem", "object storage"],
+    "Compute": ["compute", "stateless", "container", "k8s", "kubernetes", "vm instances", "virtual", "machine", "run", "pod", "clusters", "functions", "sql queries", "nodes", "cpu and memory", "serverless"],
+    "Build / CI": ["release", "artefact", "build", "artifact", "ci/cd", "deployment", "deploy", "integration", "continuous integration", "repository", "vulnerability", "source code", "code", "docker", "registry", "java", "infrastructure as code", "build automation"],
+    "Observability": ["time series", "instrumentation", "alert", "dashboard", "metrics", "monitoring", "logs", "traces", "alerting", "observability", "metrics collection", "prometheus", "visualization", "metric storage", "log storage", "alert rules"]
+}
+
+def filter_low_fuzzy_matches(val):
+    threshold = 80
+    if val < threshold:
+        return 0
+    else:
+        return val 
+
+def categorize_product(product):
+    name = product["name"]
+    description = product["description"]
+    use_cases = " ".join(product["example_use_cases"])
+    
+    scores = {category: 0 for category in categories}
+    
+    for category, keywords in categories.items():
+        for kw in keywords:
+            keyword = kw.lower().strip()
+            scores[category] += filter_low_fuzzy_matches(fuzz.partial_ratio(keyword.lower(), str(word!="" for word in name.lower().strip().split(" "))) / len(categories[category]))
+            print (product["name"], category, scores[category])
+            #scores[category] += fuzz.partial_ratio(keyword.lower(), name.lower().strip())
+            scores[category] += filter_low_fuzzy_matches(fuzz.partial_ratio(keyword.lower(), description.lower().strip()))
+            scores[category] += filter_low_fuzzy_matches(fuzz.partial_ratio(keyword.lower(), str(kw.lower().strip()!="" for kw in str(product["keywords"]))))
+            print (product["name"], category, scores[category])
+            scores[category] += filter_low_fuzzy_matches(fuzz.partial_ratio(keyword.lower(), str(usecase.lower().strip()!="" for usecase in str(product["example_use_cases"]).lower()))) 
+            print (product["name"], category, scores[category]) 
+#    print (product["name"], str((score[category] for score in scores, category in categories)))
+    print(product["name"], max(scores, key=scores.get))
+    return max(scores, key=scores.get)
+
+# Assign categories
+for product_key in product_definitions:
+    product = product_definitions[product_key]
+    category = categorize_product(product)
+    product_definitions[product_key]['category'] = category
+
+# Convert to DataFrame for display
+df = pd.DataFrame.from_dict(product_definitions, orient='index')
+
+# Select and rename the relevant columns for display
+df = df[['name', 'category', 'url', 'keywords', 'description', 'example_use_cases']]
+df['example_use_cases'] = df['example_use_cases'].apply(lambda x: ', '.join(x))
+
+# Output the DataFrame as JSON
+output_json_path = 'product_definitions_with_categories.json'
+df.to_json(output_json_path, orient='index', indent=4)
+
+print(f"Output JSON saved to {output_json_path}")
+

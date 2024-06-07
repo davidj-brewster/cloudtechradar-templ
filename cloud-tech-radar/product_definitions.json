@@ -61,10 +61,8 @@
         "example_use_cases": [
             "Object storage",
             "Archival/backup storage",
-            "autoclass tiered storage",
             "Batch data",
             "Flow outputs",
-            "Snapshots",
             "Assets/Derivatives",
             "Content Acquisition",
             "Adhoc data usecases"
@@ -99,7 +97,7 @@
             "Vertical scaling services",
             "Predictable request-patterns",
             "Moderately-erratic request patterns",
-            "Autoscaling clusters"
+            "Larger workloads"
         ]
     },
     "GKE Autopilot": {
@@ -107,13 +105,13 @@
         "url": "https://cloud.google.com/kubernetes-engine",
         "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQGuu8ttuw2O_l62W_fOMEWUNOg8ZENwnYx17VtYYjUr5RYkrGwoO-Ay6nWAA&s",
         "file_path": "product_images/GKE.png",
-        "keywords": "Autoscaling kubernetes environment",
-        "description": "GKE environment with a focus on automated management and scaling",
+        "keywords": "Managed kubernetes",
+        "description": "Cluster, Pod and container environment with reduced management overhead",
         "example_use_cases": [
-            "Batch processing compute",
+            "Flink compute",
             "Scheduled computations",
-            "Highly erratic load-patterns",
-            "Flink"
+            "Unpredictable load-patterns",
+            "Smaller workloads"
         ]
     },
     "Compute Engine": {
@@ -122,7 +120,7 @@
         "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT5d8bGLEo4n4NO4DY1YQmaAck6VJla2ijNye2HUgZRI5GtzskefR776ejSbg&s",
         "file_path": "product_images/Compute Engine.png",
         "keywords": "virtual machines",
-        "description": "Scalable virtual machines for compute workloads",
+        "description": "Scalable virtual machines for compute and memory intensive workloads",
         "example_use_cases": [
             "Virtual machines",
             "Compute workloads",
@@ -149,11 +147,9 @@
         "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTFSLCLTJEOSfYPwAf_zVMMjxGxOsHHPS6QbcozhNkx7KPqP4qQ0aXiroNzng&s",
         "file_path": "product_images/Cloud Run.png",
         "keywords": "Kubernetes containers",
-        "description": "Service to run stateless containers on Kubernetes",
+        "description": "Service to run stateless containers on compute instances that scale on demand",
         "example_use_cases": [
             "Smaller stateless services",
-            "Downscaling to 0",
-            "Simplified container deployments",
             "Developer branch environments",
             "Canary deployments"
         ]
@@ -163,12 +159,13 @@
         "url": "https://cloud.google.com/cloud-build",
         "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSnDX3eRT7kDoJo3JQhEUZHfyCx2-rFxeVoACJaBTEAd0KoHM25JMYhNJ4UCmw&s",
         "file_path": "product_images/Cloud Build.png",
-        "keywords": "CI/CD service",
-        "description": "Service for building, testing, and deploying code",
+        "keywords": "CI/CD",
+        "description": "Integrated service for building, testing, and deploying code",
         "example_use_cases": [
             "Continuous integration",
             "Continuous deployment",
-            "Build automation"
+            "Build and deploy automation",
+            "GKE and Cloud Run"
         ]
     },
     "Artifact Registry": {
@@ -189,13 +186,12 @@
         "url": "https://cloud.google.com/container-registry",
         "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSKWUE1UmJOutNWZarGZWOlPzM52WsCYV9YmZ6nXcfCrGNKbEWucebPq7uN7Fw&s",
         "file_path": "product_images/Container Registry.jpeg",
-        "keywords": "Docker images",
+        "keywords": "Docker artifact registry",
         "description": "Private Docker image storage on Google Cloud",
         "example_use_cases": [
-            "Docker images",
-            "Container storage",
-            "Image management",
-            "Docker image repo"
+            "Docker image registry",
+            "Container image storage",
+            "Integrated deployment GKE/Cloud Run"
         ]
     },
     "Cloud SQL": {
@@ -208,7 +204,8 @@
         "example_use_cases": [
             "SQL databases",
             "Transactional apps",
-            "Relational data"
+            "Relational data",
+            "Datastore for services"
         ]
     },
     "AlloyDB": {
@@ -220,8 +217,7 @@
         "description": "PostgreSQL-compatible relational database service",
         "example_use_cases": [
             "PostgreSQL databases",
-            "Enterprise apps",
-            "Transactional workloads"
+            "Financial transactions"
         ]
     },
     "MongoDB Atlas": {
@@ -234,7 +230,7 @@
         "example_use_cases": [
             "NoSQL databases",
             "Document storage",
-            "Scalable apps"
+            "Scalable data and apps"
         ]
     },
     "Cloud Spanner": {
@@ -245,8 +241,7 @@
         "keywords": "global databases",
         "description": "Horizontally scalable, strongly consistent relational database",
         "example_use_cases": [
-            "Global databases",
-            "Financial services",
+            "Global requirement",
             "High availability"
         ]
     },
@@ -259,7 +254,7 @@
         "description": "Document database for automatic scaling and performance",
         "example_use_cases": [
             "Mobile apps",
-            "Web apps",
+            "Low-latency webapps & APIs",
             "Real-time data"
         ]
     },
@@ -271,9 +266,9 @@
         "keywords": "code hosting",
         "description": "Code hosting platform for version control and collaboration",
         "example_use_cases": [
-            "Version control",
-            "Code collaboration",
-            "Open source"
+            "Source-code version control",
+            "Code reviews",
+            "Infrastructure configuration"
         ]
     },
     "GitHub Actions": {
@@ -282,11 +277,13 @@
         "image_url": "https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png",
         "file_path": "product_images/GitHub Actions.png",
         "keywords": "CI/CD workflows",
-        "description": "Service for automated software workflows on GitHub",
+        "description": "Automation service for CI/CD workflows on GitHub",
         "example_use_cases": [
             "CI/CD pipelines",
             "Automated testing",
-            "Deployment workflows"
+            "Software builds",
+            "Self-hosted runners",
+            "Deployments"
         ]
     },
     "Jenkins": {
@@ -295,7 +292,7 @@
         "image_url": "https://www.jenkins.io/images/logos/jenkins/jenkins.png",
         "file_path": "product_images/Jenkins.png",
         "keywords": "automation server",
-        "description": "Open-source automation server for CI/CD pipelines",
+        "description": "Automation server for CI/CD pipelines defined in code",
         "example_use_cases": [
             "Continuous integration",
             "Continuous delivery",
@@ -310,9 +307,10 @@
         "keywords": "monitoring dashboards",
         "description": "Open-source platform for monitoring and observability",
         "example_use_cases": [
-            "Monitoring dashboards",
-            "Metrics visualization",
-            "Alerting"
+            "Dashboards",
+            "Exploring metrics logs and events",
+            "Infrastructure and service monitoring",
+            "Alert rules and routing"
         ]
     },
     "Grafana Cloud": {
@@ -320,13 +318,13 @@
         "url": "https://grafana.com/products/cloud/",
         "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQZAZ5LwUPpIkVpy91r5O0jxmm6XD4mfvk6Vs90_Pqy_Je8HtsJBGAYtNij3H4&s",
         "file_path": "product_images/Grafana Cloud.jpeg",
-        "keywords": "managed Grafana",
-        "description": "Grafana service for metrics, logs, and traces",
+        "keywords": "managed Cloud observability",
+        "description": "Paid service for storing and discovering metrics, logs, and traces plus alerting",
         "example_use_cases": [
-            "Monitoring",
-            "Cloud observability",
-            "Dashboarding",
-            "Alerting"
+            "Infrastructure and service Monitoring",
+            "Dashboards",
+            "Exploring metrics, logs and events",
+            "Alert rules and routing"
         ]
     },
     "Prometheus": {
@@ -334,7 +332,7 @@
         "url": "https://prometheus.io",
         "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTREBeDZCXLuqONtI-X-Lnt1ZZ-3nNx4frGPH5SbMztuEDYLy5a4x1bwTQYUpA&s",
         "file_path": "product_images/Prometheus.jpeg",
-        "keywords": "metrics monitoring",
+        "keywords": "metrics monitoring alerting",
         "description": "Monitoring and alerting toolkit for metrics",
         "example_use_cases": [
             "Metrics collection",
@@ -347,12 +345,14 @@
         "url": "https://victoriametrics.com/",
         "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT4rg5Q5zJcNjcGW4vkDOa-alz-86Q1hJtUZ_wXk27oGwU7n6o40BaGc215dw&s",
         "file_path": "product_images/VictoriaMetrics OSS.png",
-        "keywords": "time series database",
-        "description": "Open-source time series database for metrics storage",
+        "keywords": "prometheus compatible metrics",
+        "description": "Open-source time series database for metrics and alerts, compatible with PromQL",
         "example_use_cases": [
-            "High-performance metrics",
-            "Monitoring",
-            "Metrics storage"
+            "High-cardinality metrics",
+            "Service/infra metrics",
+            "Dashboards",
+            "Metric storage and retention",
+            "Alerting via Grafana"
         ]
     },
     "Gradle": {
@@ -361,11 +361,13 @@
         "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT80DXKdwKFwglBV3xAGym7oh5POIL07jPRKs0OPYoWwngLGwzD4VucCQlu1Jw&s",
         "file_path": "product_images/Gradle.png",
         "keywords": "build automation",
-        "description": "Build automation tool for Java and other languages",
+        "description": "Build automation tooling for Java and other languages",
         "example_use_cases": [
             "Build automation",
             "Dependency management",
-            "Java builds"
+            "Java builds",
+            "Snapshot releases",
+            "Deployment releases"
         ]
     },
     "Harbor": {
@@ -373,10 +375,11 @@
         "url": "https://goharbor.io",
         "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTMHwDTYA8tDUC_QJTZGU0ny6ZKTGbbxTvVNE1pvV6k8maD00jVlXkjFgIJ1xg&s",
         "file_path": "product_images/Harbor.jpeg",
-        "keywords": "container registry",
-        "description": "Push-style proxy to upload images to Nexus/GCR instances",
+        "keywords": "docker container registry",
+        "description": "Push-style proxy to upload docker images to an artifact registry",
         "example_use_cases": [
-            "Artifact push proxy",
+            "Developer artifact uploads",
+            "Gradle builds",
             "Vulnerability scanning"
         ]
     },
