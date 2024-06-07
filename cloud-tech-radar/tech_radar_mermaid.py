@@ -7,34 +7,31 @@ with open('product_definitions.json', 'r') as f:
 with open('tech_radar_product_categories.json', 'r') as f:
     category_titles = json.load(f)
 
-# Create the mermaidJS output
+# Create the mermaidJS output for a mind map
 mermaid_output = """
-```mermaid
-%%{init: {'theme': 'base', 'themeVariables': {'primaryColor': '#fff', 'edgeLabelBackground':'#fff', 'tertiaryColor': '#fff'}}}%%
-graph TD;
+mindmap
+root((Tech Radar))
 """
+
+# Function to clean the product names and keywords
+def clean_text(text):
+    return text.replace('(', '').replace(')', '')
 
 # Add products under each category
 for category, title in category_titles.items():
     print(f"Processing category: {category} -> {title}")
-    mermaid_output += f"\n    subgraph \"{title}\"\n        direction TB;\n"
+    mermaid_output += f"  {title}\n"
     for product_key, product in product_definitions.items():
         if product.get('category') == category:
-            use_cases = ", ".join(product["example_use_cases"])
-            # Unique identifier for each node
-            node_id = product_key.replace(" ", "_").replace("/", "_").replace("&", "and")
-            product_info = f"{node_id}[\"{product['name']}\\nURL: {product['url']}\\nDescription: {product['description']}\\nUse Cases: {use_cases}\"];"
-            mermaid_output += f"        {product_info}\n"
+            # Clean the product name and keywords
+            product_name = clean_text(product['name'])
+            keywords = clean_text(product['keywords'])
+            product_info = f"    {product_name}: {keywords}\n"
+            mermaid_output += product_info
             print(f"  Added product: {product_key}")
-    mermaid_output += "    end;\n"
-
-# Close the mermaid code block
-mermaid_output += "\n```"
 
 # Save the mermaidJS output to a file
 output_path = 'tech_radar.mmd'
 with open(output_path, 'w') as f:
     f.write(mermaid_output)
-
-print(f"Mermaid.js output saved to {output_path}")
 
