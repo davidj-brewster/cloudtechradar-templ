@@ -9,6 +9,7 @@ with open('tech_radar_product_categories.json', 'r') as f:
 
 # Create the mermaidJS output
 mermaid_output = """
+```mermaid
 %%{init: {'theme': 'base', 'themeVariables': {'primaryColor': '#fff', 'edgeLabelBackground':'#fff', 'tertiaryColor': '#fff'}}}%%
 graph TD
 """
@@ -27,10 +28,14 @@ for category, title in category_titles.items():
             print(f"  Added product: {product_key}")
     mermaid_output += "    end\n"
 
+# Close the mermaid code block
+mermaid_output += "\n```"
+
 # Save the mermaidJS output to a file
 output_path = 'tech_radar.mmd'
 with open(output_path, 'w') as f:
     f.write(mermaid_output)
 
 print(f"Mermaid.js output saved to {output_path}")
+
 
