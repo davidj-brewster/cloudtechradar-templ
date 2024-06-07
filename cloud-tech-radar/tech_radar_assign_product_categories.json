@@ -1,9 +1,13 @@
 import json
+import shutil
 from fuzzywuzzy import fuzz
 
 # Load product definitions
 with open('product_definitions.json', 'r') as f:
     product_definitions = json.load(f)
+
+# Backup the original product_definitions.json
+shutil.copy('product_definitions.json', 'product_definitions_backup.json')
 
 # Define the categories and keywords
 categories = {
@@ -45,7 +49,7 @@ for product_key in product_definitions:
     product_definitions[product_key]['category'] = category
 
 # Output the updated product definitions as JSON
-output_json_path = 'product_definitions_with_categories.json'
+output_json_path = 'product_definitions.json'
 with open(output_json_path, 'w') as f:
     json.dump(product_definitions, f, indent=4)
 

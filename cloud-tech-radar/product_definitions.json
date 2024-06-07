@@ -10,7 +10,8 @@
             "Data analytics",
             "Business intelligence",
             "Big data"
-        ]
+        ],
+        "category": "Data / ML"
     },
     "AI Platform": {
         "name": "AI Platform",
@@ -23,7 +24,8 @@
             "Machine learning",
             "AI workflows",
             "Model training"
-        ]
+        ],
+        "category": "Data / ML"
     },
     "Dataflow": {
         "name": "Dataflow",
@@ -36,7 +38,8 @@
             "Data processing",
             "Real-time ETL",
             "Data pipelines"
-        ]
+        ],
+        "category": "Data / ML"
     },
     "Dataproc": {
         "name": "Dataproc",
@@ -49,7 +52,8 @@
             "Big data analytics",
             "Data transformation",
             "ETL jobs"
-        ]
+        ],
+        "category": "Data / ML"
     },
     "Cloud Storage": {
         "name": "Cloud Storage",
@@ -66,7 +70,8 @@
             "Assets/Derivatives",
             "Content Acquisition",
             "Adhoc data usecases"
-        ]
+        ],
+        "category": "Storage"
     },
     "Filestore": {
         "name": "Filestore",
@@ -79,7 +84,8 @@
             "Filesystem structure",
             "NFS storage",
             "Application data"
-        ]
+        ],
+        "category": "Storage"
     },
     "GKE": {
         "name": "Google Kubernetes Engine (GKE)",
@@ -98,7 +104,8 @@
             "Predictable request-patterns",
             "Moderately-erratic request patterns",
             "Larger workloads"
-        ]
+        ],
+        "category": "Compute"
     },
     "GKE Autopilot": {
         "name": "Google Kubernetes Engine (GKE) Autopilot",
@@ -112,7 +119,8 @@
             "Scheduled computations",
             "Unpredictable load-patterns",
             "Smaller workloads"
-        ]
+        ],
+        "category": "Compute"
     },
     "Compute Engine": {
         "name": "Compute Engine",
@@ -127,7 +135,8 @@
             "Custom VMs",
             "Spot instances",
             "Vertical scaling workloads"
-        ]
+        ],
+        "category": "Compute"
     },
     "Cloud Functions": {
         "name": "Cloud Functions",
@@ -139,7 +148,8 @@
         "example_use_cases": [
             "Serverless functions",
             "Event-driven apps"
-        ]
+        ],
+        "category": "Compute"
     },
     "Cloud Run": {
         "name": "Cloud Run",
@@ -152,7 +162,8 @@
             "Smaller stateless services",
             "Developer branch environments",
             "Canary deployments"
-        ]
+        ],
+        "category": "Compute"
     },
     "Cloud Build": {
         "name": "Cloud Build",
@@ -166,7 +177,8 @@
             "Continuous deployment",
             "Build and deploy automation",
             "GKE and Cloud Run"
-        ]
+        ],
+        "category": "Build / CI"
     },
     "Artifact Registry": {
         "name": "Artifact Registry",
@@ -179,7 +191,8 @@
             "Artifact storage",
             "Dependency management",
             "Container registry"
-        ]
+        ],
+        "category": "Build / CI"
     },
     "Container Registry": {
         "name": "Container Registry",
@@ -192,7 +205,8 @@
             "Docker image registry",
             "Container image storage",
             "Integrated deployment GKE/Cloud Run"
-        ]
+        ],
+        "category": "Build / CI"
     },
     "Cloud SQL": {
         "name": "Cloud SQL",
@@ -206,7 +220,8 @@
             "Transactional apps",
             "Relational data",
             "Datastore for services"
-        ]
+        ],
+        "category": "Storage"
     },
     "AlloyDB": {
         "name": "AlloyDB",
@@ -218,7 +233,8 @@
         "example_use_cases": [
             "PostgreSQL databases",
             "Financial transactions"
-        ]
+        ],
+        "category": "Storage"
     },
     "MongoDB Atlas": {
         "name": "MongoDB Atlas",
@@ -231,7 +247,8 @@
             "NoSQL databases",
             "Document storage",
             "Scalable data and apps"
-        ]
+        ],
+        "category": "Storage"
     },
     "Cloud Spanner": {
         "name": "Cloud Spanner",
@@ -243,7 +260,8 @@
         "example_use_cases": [
             "Global requirement",
             "High availability"
-        ]
+        ],
+        "category": "Storage"
     },
     "Firestore": {
         "name": "Firestore",
@@ -256,7 +274,8 @@
             "Mobile apps",
             "Low-latency webapps & APIs",
             "Real-time data"
-        ]
+        ],
+        "category": "Storage"
     },
     "GitHub": {
         "name": "GitHub",
@@ -269,7 +288,8 @@
             "Source-code version control",
             "Code reviews",
             "Infrastructure configuration"
-        ]
+        ],
+        "category": "Build / CI"
     },
     "GitHub Actions": {
         "name": "GitHub Actions",
@@ -284,7 +304,8 @@
             "Software builds",
             "Self-hosted runners",
             "Deployments"
-        ]
+        ],
+        "category": "Build / CI"
     },
     "Jenkins": {
         "name": "Jenkins",
@@ -297,7 +318,8 @@
             "Continuous integration",
             "Continuous delivery",
             "Automated builds"
-        ]
+        ],
+        "category": "Build / CI"
     },
     "Grafana OSS": {
         "name": "Grafana OSS",
@@ -311,7 +333,8 @@
             "Exploring metrics logs and events",
             "Infrastructure and service monitoring",
             "Alert rules and routing"
-        ]
+        ],
+        "category": "Observability"
     },
     "Grafana Cloud": {
         "name": "Grafana Cloud",
@@ -325,7 +348,8 @@
             "Dashboards",
             "Exploring metrics, logs and events",
             "Alert rules and routing"
-        ]
+        ],
+        "category": "Observability"
     },
     "Prometheus": {
         "name": "Prometheus",
@@ -338,7 +362,8 @@
             "Metrics collection",
             "Alerting",
             "Monitoring"
-        ]
+        ],
+        "category": "Observability"
     },
     "VictoriaMetrics OSS": {
         "name": "VictoriaMetrics OSS",
@@ -353,7 +378,8 @@
             "Dashboards",
             "Metric storage and retention",
             "Alerting via Grafana"
-        ]
+        ],
+        "category": "Observability"
     },
     "Gradle": {
         "name": "Gradle",
@@ -368,7 +394,8 @@
             "Java builds",
             "Snapshot releases",
             "Deployment releases"
-        ]
+        ],
+        "category": "Build / CI"
     },
     "Harbor": {
         "name": "Harbor",
@@ -381,7 +408,8 @@
             "Developer artifact uploads",
             "Gradle builds",
             "Vulnerability scanning"
-        ]
+        ],
+        "category": "Build / CI"
     },
     "Nexus Repository OSS": {
         "name": "Nexus Repository OSS",
@@ -398,6 +426,7 @@
             "Java artifacts",
             "Docker images",
             "Helm charts"
-        ]
+        ],
+        "category": "Build / CI"
     }
 }
