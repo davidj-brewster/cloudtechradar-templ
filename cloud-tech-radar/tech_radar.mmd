@@ -1,35 +1,36 @@
 mindmap
-root((Cloud Tech Radar))
-  (Data and ML)
+root((RG Cloud Radar))
+  (Data + ML)
   ::icon(fa-solid fa-chart-pie)
-      BigQuery: Data Warehouse
-      AI Platform: ML models
-      Dataflow: Stream & Batch
-      Dataproc: Big Data
-      Cloud Composer: Scheduling
-  (Storage Solutions)
-  ::icon(fa-solid fa-database)
-        Cloud Storage: Object storage
-        Cloud SQL: SQL DB
-        AlloyDB: PostgreSQL DB
-        MongoDB Atlas: NoSQL DB
-  (Compute and GKE)
+                BigQuery: Data Warehouse
+                AI Platform: ML + AI
+                Dataflow: Stream & Batch
+                Dataproc: Big Data
+                Composer: Scheduling
+  (Compute)
     ::icon(fa-solid fa-microchip)
-      GKE: Flexible Kubernetes
-      Autopilot GKE: Managed cluster
-      Compute Engine: VM instances
-      Cloud Functions: Serverless
-      Cloud Run: Multi/containers
-      Consul Connect: Service Mesh
-  (DevOps Tooling)
+                GKE: K8s clusters
+                Autopilot GKE: Run pods
+                Compute Engine: Run VMs 
+                Cloud Functions: Serverless
+                Cloud Run: Containers
+                Consul/Envoy: Service Mesh
+                Cloudflare: Site delivery, workers,security
+  (Storage)
+        ::icon(fa-solid fa-database)
+                Cloud Storage: Object store
+                Cloud SQL: SQL DBs
+                AlloyDB: PostgreSQL DB
+                MongoDB Atlas: NoSQL DB   
+  (DevOps)
     ::icon(fa-brands fa-github)
-      Cloud Build: CI/CD
-      Artifact Registry: Software artifacts
-      Container Registry: Docker images
-      GitHub: Code & CI/CD
-      Terraform: Infra as code
-      Jenkins: CI/CD
-      Gradle: Software builds
-      Harbor: Docker proxy
-      Nexus: Release artifacts
+                Container Registry: docker
+                GitHub: Code & CI/CD
+                Terraform: Infra as code
+                Gradle: Builds, releases
+                Harbor: Artifact proxy
+                Nexus*: Artifact repo
+                Grafana: Dashboards, Alerts
+                VictoriaMetrics: Instrumentation
+                Elastic Stack: Logs
 
