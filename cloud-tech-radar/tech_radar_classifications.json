@@ -1,10 +1,7 @@
 {
     "adopt": [
-        "BigQuery",
-        "Kubernetes Engine GKE",
         "Cloud Storage",
         "Grafana OSS",
-        "Gradle",
         "VictoriaMetrics",
         "GitHub",
         "Terraform+ArgoCD"
@@ -12,27 +9,8 @@
     "evaluation": [
         "AI Platform",
         "Dataflow",
-        "Cloud SQL",
-        "Dataproc",
-        "MongoDB Atlas",
-        "GKE Autopilot"
     ],
     "hold": [
-        "Cloud Spanner",
-        "Grafana Cloud",
-        "AlloyDB",
-        "Firestore",
-        "Harbor",
-        "Nexus",
-        "Container Registry",
-        "Compute Engine",
-        "Prometheus",
-        "Cloud Run",
-        "Cloud Build",
-        "Jenkins",
-        "Filestore",
-        "Cloud Functions",
-        "Artifact Registry"
     ],
     "retire": [
         "Graphite/StatsD"
