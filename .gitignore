@@ -1,5 +1,6 @@
 # Custom outputs for this implementation
 cloud-tech-radar/product_images
+cloud-tech-radar/product_images/*
 .vscode
 cloud-tech-radar/*.ttf
 cloud-tech-radar/*.zip
@@ -7,6 +8,9 @@ cloud-tech-radar/product_images/*
 cloud-tech-radar/*.json
 cloud-tech-radar/product_definitions.json
 cloud-tech-radar/product_definitions.json
+cloud-tech-radar/tech_radar_classifications.json
+cloud-tech-radar/fonts
+cloud-tech-radar/fonts/*
 cloud-tech-radar/output
 cloud-tech-radar/output/*
 product_images
