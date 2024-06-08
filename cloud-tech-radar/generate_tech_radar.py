@@ -24,8 +24,8 @@ download_font(font_url, font_path)
 # Load the font with error handling
 try:
     large_font = ImageFont.truetype(font_path, 32)
-    font = ImageFont.truetype(font_path, 15)
-    small_font = ImageFont.truetype(font_path, 11)
+    font = ImageFont.truetype(font_path, 18)
+    small_font = ImageFont.truetype(font_path, 12)
 except IOError:
     print("Error loading font. Using default font.")
     font = ImageFont.load_default(28)
@@ -122,11 +122,11 @@ def add_images(entry, draw,image, x, y):
             else:
                 raise Exception(f"No local image or image URL for {entry['id']}")
 
-        opacity_level = 25 #doesn't seem to work
+        opacity_level = 80 #doesn't seem to work
         img = Image.open(local_img_path).convert("RGBA")
         img_w, img_h = img.size
         img_ratio = img_w / img_h
-        new_height = 40  #vary based on the content in your tech radar..
+        new_height = 42  #vary based on the content in your tech radar..
         new_width = int(new_height * img_ratio)
         img2 = img.resize((new_width, new_height), Image.Resampling.LANCZOS)
         
@@ -150,7 +150,7 @@ def draw_tech_radar(tech_radar):
     draw = ImageDraw.Draw(img)
     random.seed(200) 
     center_x, center_y =((width // 2), (height // 2))
-    ring_radius = [350, 475, 595, 680]
+    ring_radius = [360, 475, 595, 680]
 
     quadrant_angle_step = 360 / len(tech_radar['quadrants'])
     
@@ -202,29 +202,31 @@ def draw_tech_radar(tech_radar):
     
         # Collision detection and resolution
         i = 0
-        max_attempts = 2000 # Limit attempts to prevent infinite loop
-        while any(abs(px - x) < 95 and abs(py - y) < 92 for px, py in placed_entries) and i < max_attempts:
-            angle += random.uniform(-8, 8)  # Small random adjustment
+        max_attempts = 1000 # Limit attempts to prevent infinite loop
+        while any(abs(px - x) < 85 and abs(py - y) < 85 for px, py in placed_entries) and i < max_attempts:
+            angle += random.uniform(-5, 5)  # Small random adjustment
             x = center_x + radius * cos(radians(angle))
             y = center_y + radius * sin(radians(angle))
-            if abs(y) < 250:
-              x =random.randint(-800,800)
-              y=random.randint(-800, 800)
-            if abs(x) < 300:
-              x=555
-              y=666
+            if abs(x) < 90:
+              if abs(y) < 200:
+                x+=30
+                x*=3
+            elif abs(y) < 80 and abs(x) < 200:
+                y+=20
+                y*=2.5
             i += 1
     
         if i >= max_attempts:
-            print(f"Warning: Max attempts reached for {entry['title']} at {quadrant_index}, {ring_index}")
+            print(f"Max attempts reached for {entry['title']} at {quadrant_index}, {ring_index}")
     
         # Place image and text
         img_x, img_y, img_w, img_h = add_images(entry, draw, img, x, y)
         if img_x is not None:
             placed_entries.append((x, y))
-            draw.text((img_x - img_w / 2 + 30 , img_y - img_h + 25), entry['title'], font=font, fill="black", anchor="mm")
-            draw.text((img_x-img_w/2-10, img_y + img_h + 3), f"{textwrap.fill(entry['description'],24)}", font=small_font, fill="black")
-            placed_entries.append((img_x-img_w/2+1, img_y + img_h +15))
+            draw.text((img_x + img_w / 2 +5 , img_y - img_h/2 +5), entry['title'], font=font, fill="black", anchor="mm")
+            draw.text((img_x-img_w/2-12, img_y + img_h/2+12), f"{textwrap.fill(entry['description'],24)}", font=small_font, fill="black")
+            placed_entries.append((img_x + img_w/2+5, img_y - img_h/2 +5))
+            placed_entries.append((img_x-img_w/2 -12 , img_y + img_h/2+12))
 
             img.save('output/tech_radar.png')
     print("Tech Radar image saved to tech_radar.png")
