@@ -233,3 +233,94 @@ def draw_tech_radar(tech_radar):
 
 draw_tech_radar(tech_radar)
 
+def generate_interactive_html(tech_radar):
+    """Generate an HTML file with hover functionality for the tech radar."""
+    tech_radar_entries = tech_radar['entries']
+    center_x = center_y = INITIAL_CANVAS_SIZE // 2
+
+    # Initialize ring_radius correctly
+    ring_radius = [INITIAL_CANVAS_SIZE // 8, INITIAL_CANVAS_SIZE // 4, INITIAL_CANVAS_SIZE // 2, 3 * INITIAL_CANVAS_SIZE // 4]
+
+    initial_positions, medium_font, small_font, ring_radius, center_x, center_y, canvas_size = adjust_sizes(
+        tech_radar_entries, center_x, center_y, ring_radius, tech_radar['quadrants'], INITIAL_CANVAS_SIZE)
+    adjusted_positions = adjust_positions(initial_positions, tech_radar['quadrants'], tech_radar['rings'], center_x, center_y, ring_radius)
+
+    # Generate HTML content
+    html_content = """
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <style>
+            .tooltip {
+                position: absolute;
+                display: none;
+                background-color: white;
+                border: 1px solid black;
+                padding: 5px;
+                z-index: 10;
+            }
+        </style>
+        <script>
+            function showTooltip(evt, text) {
+                var tooltip = document.getElementById('tooltip');
+                tooltip.style.display = 'block';
+                tooltip.style.left = evt.pageX + 10 + 'px';
+                tooltip.style.top = evt.pageY + 10 + 'px';
+                tooltip.innerHTML = text;
+            }
+
+            function hideTooltip() {
+                var tooltip = document.getElementById('tooltip');
+                tooltip.style.display = 'none';
+            }
+        </script>
+    </head>
+    <body>
+        <div id="tooltip" class="tooltip"></div>
+        <svg width="{size}" height="{size}">
+    """.format(size=canvas_size)
+
+    # Define colors for each ring
+    ring_colors = ["rgba(255, 204, 204, 0.5)", "rgba(255, 255, 204, 0.5)", "rgba(204, 255, 204, 0.5)", "rgba(204, 204, 255, 0.5)"]
+    
+    # Draw the shaded rings
+    for i, radius in enumerate(ring_radius):
+        html_content += """
+            <circle cx="{cx}" cy="{cy}" r="{radius}" fill="{color}" stroke="black" />
+        """.format(cx=center_x, cy=center_y, radius=radius, color=ring_colors[i])
+
+    # Place adjusted entries on the SVG
+    for x, y, w, h, _, _, entry in adjusted_positions:
+        img_x, img_y, img_w, img_h = x - w // 2, y - h // 2, w, h
+        html_content += """
+            <image x="{img_x}" y="{img_y}" width="{img_w}" height="{img_h}" xlink:href="{img_src}" 
+                   onmousemove="showTooltip(evt, '{title}: {description}')" onmouseout="hideTooltip()" />
+            <text x="{text_x}" y="{text_y}" font-family="Roboto" font-size="{font_size}" text-anchor="middle">{title}</text>
+        """.format(img_x=img_x, img_y=img_y, img_w=img_w, img_h=img_h, img_src=entry['image_url'], 
+                   title=entry['title'], description=entry['description'], text_x=img_x + img_w // 2, 
+                   text_y=img_y + img_h + 20, font_size=MEDIUM_FONT_SIZE)
+
+    # Add category labels
+    for quadrant in tech_radar['quadrants']:
+        angle_start = tech_radar['quadrants'].index(quadrant) * quadrant_angle_step
+        angle_end = angle_start + quadrant_angle_step
+        angle = (angle_start + angle_end) / 2
+        label_x = center_x + ring_radius[-1] * 1.1 * cos(radians(angle))
+        label_y = center_y + ring_radius[-1] * 1.1 * sin(radians(angle))
+        html_content += """
+            <text x="{label_x}" y="{label_y}" font-family="Roboto" font-size="{font_size}" text-anchor="middle">{name}</text>
+        """.format(label_x=label_x, label_y=label_y, font_size=LARGE_FONT_SIZE, name=quadrant['name'])
+
+    # Close SVG and HTML tags
+    html_content += """
+        </svg>
+    </body>
+    </html>
+    """
+
+    with open('tech_radar.html', 'w') as f:
+        f.write(html_content)
+
+# Generate the interactive HTML file
+generate_interactive_html(tech_radar)
+

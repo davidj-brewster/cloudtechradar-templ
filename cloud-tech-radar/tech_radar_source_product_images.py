@@ -24,7 +24,7 @@ def validate_and_download_image(product, url, version=0):
         img_path = os.path.join("product_images", f"{product}_{version}.{img_format}")
         img.save(img_path)
         width, height = img.size
-        if width < 100 or height < 100: 
+        if width < 80 or height < 80: 
           return False, None, None
         return True, img_path, url
     except (requests.RequestException, UnidentifiedImageError) as e:

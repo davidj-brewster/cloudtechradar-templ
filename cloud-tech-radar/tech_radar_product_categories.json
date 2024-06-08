@@ -1,7 +1,7 @@
 {
-    "Data / ML": "Data and Machine Learning",
-    "Storage": "Storage Solutions",
-    "Compute": "Compute and GKE",
-    "DevOps": "Build and Deployment",
-    "Observability": "Monitoring, alerting, logs"
+    "Data Platform": "Data Platform",
+    "Storage and Databases": "Storage and Databases",
+    "Compute and Web Platform": "Compute and Web Platform",
+    "DevOps": "DevOps",
+    "Observability": "Observability"
 }

@@ -7,14 +7,14 @@ import json
 
 # Constants and static variables
 DEBUG = True  # Set to True to enable debug logging
-INITIAL_CANVAS_SIZE = 1600
-MEDIUM_FONT_SIZE = 16
-SMALL_FONT_SIZE = 12
-LARGE_FONT_SIZE = 40
-REPULSION_CONSTANT = 5000
-ATTRACTION_CONSTANT = 0.1
+INITIAL_CANVAS_SIZE = 1400
+MEDIUM_FONT_SIZE = 20
+SMALL_FONT_SIZE = 14
+LARGE_FONT_SIZE = 48
+REPULSION_CONSTANT = 50
+ATTRACTION_CONSTANT = 4
 DAMPING = 0.85
-LEEWAY = 0.1  # 10% leeway
+LEEWAY = 0.02  # 2% leeway
 
 # Load fonts
 large_font = ImageFont.truetype("./fonts/Roboto-Regular.ttf", LARGE_FONT_SIZE)
@@ -38,11 +38,14 @@ with open('tech_radar_product_categories.json') as f:
 log_debug(f"Product Categories: {product_categories}")
 
 # Reverse the product categories to map the full names to the shorter keys
-category_map = {value: key for key, value in product_categories.items()}
+category_map = product_categories#.items()#{value: key for key, value in product_categories.items()}
+
+# Debug: Print the reverse category map
+log_debug(f"Category Map: {category_map}")
 
 # Generate tech radar data structure
 tech_radar = {
-    "quadrants": [{"id": key, "name": value} for key, value in product_categories.items()],
+    "quadrants": [{"id": value, "name": value} for key,value in product_categories.items()],
     "rings": [
         {"id": "adopt", "name": "Adopt"},
         {"id": "evaluation", "name": "Evaluate"},
@@ -52,16 +55,46 @@ tech_radar = {
     "entries": []
 }
 
+# Define quadrants based on category titles, this is a bit all the wrong way around
+quadrants = [
+    { "id": "data_ml", "name": "Data Platform" },
+    { "id": "storage", "name": "Storage and Databases" },
+    { "id": "compute", "name": "Compute and Web Platform" },
+    { "id": "build_ci", "name": "DevOps" },
+    { "id": "observability", "name": "Observability" }
+]
+
+# Map categories to slices of the circular tech radar
+#category_to_quadrant = {
+#    "Data Platform": "data_ml",
+#    "Storage and Databases": "storage",
+#    "Compute and Web Platform": "compute",
+#    "DevOps": "build_ci",
+#    "Observability": "observability"
+#}
+
+category_to_quadrant= { 
+    "Data Platform": "Data Platform",
+    "Storage and Databases": "Storage and Databases", 
+    "Compute and Web Platform": "Compute and Web Platform",
+    "DevOps": "DevOps",
+    "Observability": "Observability"
+}
+
+
 # Mapping product names to their respective rings
 product_to_ring = {}
 for ring, products in classifications.items():
     for product in products:
         product_to_ring[product] = ring
 
+# Debug: Print the product to ring mapping
+log_debug(f"Product to Ring Mapping: {product_to_ring}")
+
 # Populate tech radar entries
 for product_name, product in product_definitions.items():
     category_name = product.get("category")
-    quadrant = category_map.get(category_name, None)
+    quadrant = category_to_quadrant[category_name]
     if quadrant:
         tech_radar['entries'].append({
             "id": product_name,
@@ -69,31 +102,39 @@ for product_name, product in product_definitions.items():
             "quadrant": quadrant,
             "timeline": [{"ring": product_to_ring.get(product_name, "hold")}],
             "description": product["description"],
-            "image_url": product.get("image_url"),
-            "file_path": product.get("file_path")  # Added file_path here
+            "image_url": product["image_url"],
+            "file_path": product["file_path"]  # Added file_path here
         })
+        log_debug(f"Added entry: {product['name']} to quadrant: {quadrant}, ring: {product_to_ring.get(product_name, 'hold')}")
+    else:
+        log_debug(f"Category {category_name} for product {product['name']} not found in category map.")
 
 # Variables for quadrant and ring calculations
 quadrant_angle_step = 360 / len(tech_radar['quadrants'])
 
 # Adjust ring radii to ensure the middle ring is larger
-ring_radius = [INITIAL_CANVAS_SIZE // 8, INITIAL_CANVAS_SIZE // 4, INITIAL_CANVAS_SIZE // 2, 3 * INITIAL_CANVAS_SIZE // 4]
+initial_ring_radius = [INITIAL_CANVAS_SIZE // 5, INITIAL_CANVAS_SIZE // 5, INITIAL_CANVAS_SIZE // 5, INITIAL_CANVAS_SIZE // 5]
 center_x = center_y = INITIAL_CANVAS_SIZE // 2
 
 # Function to calculate text size
 def calculate_text_size(entry, font):
     """Calculate the width and height of the text for the given entry."""
-    text = entry['title']
-    dummy_image = Image.new('RGB', (1, 1))
+    text = entry['description']
+    dummy_image = Image.new('RGB', (10, 10))
     draw = ImageDraw.Draw(dummy_image)
-    text_size = draw.textsize(text, font=font)
-    return text_size
+    text_bbox = draw.textbbox((0, 0), text, font=font)
+    text_width = text_bbox[2] - text_bbox[0]
+    text_height = text_bbox[3] - text_bbox[1]
+    return text_width, text_height
+
 
 # Function to adjust sizes if too crowded
-def adjust_sizes(entries, center_x, center_y, ring_radius, quadrants, canvas_size):
+def adjust_sizes(entries, center_x, center_y, initial_ring_radius, quadrants, canvas_size):
     """Adjust sizes and canvas if nodes are too crowded."""
-    max_attempts = 10
+    max_attempts = 8q:
     global medium_font, small_font, MEDIUM_FONT_SIZE, SMALL_FONT_SIZE
+    
+    ring_radius = initial_ring_radius[:]
     
     for attempt in range(max_attempts):
         placed_entries = initial_placement(entries, quadrants, ring_radius, center_x, center_y, medium_font)
@@ -119,6 +160,8 @@ def adjust_sizes(entries, center_x, center_y, ring_radius, quadrants, canvas_siz
     
     log_debug("Maximum adjustment attempts reached. Using the last adjusted sizes.")
     return placed_entries, medium_font, small_font, ring_radius, center_x, center_y, canvas_size
+
+
 
 # Function to check if nodes are crowded
 def is_crowded(placed_entries):
@@ -173,7 +216,7 @@ def initial_placement(entries, quadrants, ring_radius, center_x, center_y, font)
     return placed_entries
 
 # Function to adjust positions using force-directed algorithm
-def adjust_positions(placed_entries, quadrants, rings, center_x, center_y, ring_radius, iterations=50):
+def adjust_positions(placed_entries, quadrants, rings, center_x, center_y, ring_radius, iterations=5):
     """Adjust node positions using a force-directed algorithm."""
     for _ in range(iterations):
         for i in range(len(placed_entries)):
@@ -279,20 +322,8 @@ def initial_placement_position(entry, quadrants, rings, center_x, center_y, ring
     log_debug(f"Initial placement position: x={x}, y={y}, quadrant_index={quadrant_index}, ring_index={ring_index}")
     return x, y
 
-# Main logic
-tech_radar_entries = tech_radar['entries']
-center_x = center_y = INITIAL_CANVAS_SIZE // 2
-
-initial_positions, medium_font, small_font, ring_radius, center_x, center_y, canvas_size = adjust_sizes(tech_radar_entries, center_x, center_y, ring_radius, tech_radar['quadrants'], INITIAL_CANVAS_SIZE)
-adjusted_positions = adjust_positions(initial_positions, tech_radar['quadrants'], tech_radar['rings'], center_x, center_y, ring_radius)
-
-# Create canvas
-canvas_size = max(center_x, center_y) * 2
-img = Image.new('RGB', (canvas_size, canvas_size), (255, 255, 255))
-draw = ImageDraw.Draw(img)
-
 # Function to add images to the canvas
-def add_images(entry, draw, img, x, y):
+def add_images(entry, draw, img_obj, x, y):
     """Resize and add images to the canvas."""
     try:
         local_img_path = entry["file_path"]  # Use the file_path directly from product_definitions
@@ -318,7 +349,7 @@ def add_images(entry, draw, img, x, y):
 
         img_x = x - new_width // 2
         img_y = y - new_height // 2
-        img.paste(img, (int(img_x), int(img_y)))
+        img_obj.paste(img, (int(img_x), int(img_y)))
         return int(img_x), int(img_y), new_width, new_height
     except FileNotFoundError:
         log_debug(f"Image file for {entry['id']} not found.")
@@ -328,27 +359,47 @@ def add_images(entry, draw, img, x, y):
         log_debug(f"Error adding image for {entry['id']}: {e}")
     return None, None, None, None
 
-# Place adjusted entries on the image
-for x, y, w, h, _, _, entry in adjusted_positions:
-    img_x, img_y, img_w, img_h = add_images(entry, draw, img, x, y)
-    if img_x is not None:
-        draw.text((img_x - img_w / 2 + 1, img_y - img_h - 10), entry['title'], font=medium_font, fill="black", anchor="mm")
+# Main function to draw the tech radar
+def draw_tech_radar(tech_radar):
+    """Draw the tech radar diagram based on the given data."""
+    tech_radar_entries = tech_radar['entries']
+    center_x = center_y = INITIAL_CANVAS_SIZE // 2
 
-# Add category labels
-for quadrant in tech_radar['quadrants']:
-    angle_start = tech_radar['quadrants'].index(quadrant) * quadrant_angle_step
-    angle_end = angle_start + quadrant_angle_step
-    angle = (angle_start + angle_end) / 2
-    label_x = center_x + ring_radius[-1] * 1.1 * cos(radians(angle))
-    label_y = center_y + ring_radius[-1] * 1.1 * sin(radians(angle))
-    draw.text((label_x, label_y), quadrant['name'], font=large_font, fill="black", anchor="mm")
-    log_debug(f"Added category label for {quadrant['name']} at ({label_x}, {label_y})")
+    initial_positions, medium_font, small_font, ring_radius, center_x, center_y, canvas_size = adjust_sizes(
+        tech_radar_entries, center_x, center_y, initial_ring_radius, tech_radar['quadrants'], INITIAL_CANVAS_SIZE)
+    adjusted_positions = adjust_positions(initial_positions, tech_radar['quadrants'], tech_radar['rings'], center_x, center_y, ring_radius)
 
-# Draw the rings
-for radius in ring_radius:
-    draw.ellipse((center_x - radius, center_y - radius, center_x + radius, center_y + radius), outline='black')
-    log_debug(f"Drew ring with radius {radius}")
+    # Create canvas
+    canvas_size = max(center_x, center_y) * 2 + 50
+    image = Image.new('RGB', (canvas_size, canvas_size), (255, 255, 255))
+    draw = ImageDraw.Draw(image)
 
-# Save image
-img.save('tech_radar.png')
+    # Place adjusted entries on the image
+    for x, y, w, h, _, _, entry in adjusted_positions:
+        img_x, img_y, img_w, img_h = add_images(entry, draw, image, x, y)
+        if img_x is not None:
+            draw.text((img_x - img_w / 2 + 1, img_y - img_h - 10), entry['title'], font=medium_font, fill="black", anchor="mm")
+            log_debug(f"Drew text for {entry['title']} at ({img_x - img_w / 2 + 1}, {img_y - img_h - 10})")
+
+    # Add category labels
+    for quadrant in tech_radar['quadrants']:
+        angle_start = tech_radar['quadrants'].index(quadrant) * quadrant_angle_step
+        angle_end = angle_start + quadrant_angle_step
+        angle = (angle_start + angle_end) / 2
+        label_x = center_x + ring_radius[-1] * 1.1 * cos(radians(angle))
+        label_y = center_y + ring_radius[-1] * 1.1 * sin(radians(angle))
+        draw.text((label_x, label_y), quadrant['name'], font=large_font, fill="black", anchor="mm")
+        log_debug(f"Added category label for {quadrant['name']} at ({label_x}, {label_y})")
+
+    # Draw the rings
+    for radius in ring_radius:
+        draw.ellipse((center_x - radius, center_y - radius, center_x + radius, center_y + radius), outline='black')
+        log_debug(f"Drew ring with radius {radius}")
+
+    # Save image
+    image.save('tech_radar.png')
+
+
+# Draw the tech radar
+draw_tech_radar(tech_radar)
 
