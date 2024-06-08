@@ -61,7 +61,7 @@ tech_radar = {
 }
 
 # Save the output to a file
-output_path = 'tech_radar_backstage_cloud.json'
+output_path = 'output/tech_radar_backstage_cloud.json'
 with open(output_path, 'w') as f:
     json.dump(tech_radar, f, indent=4)
 

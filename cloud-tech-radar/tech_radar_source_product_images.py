@@ -15,14 +15,17 @@ with open('product_definitions.json', 'r') as f:
 shutil.copy('product_definitions.json', 'product_definitions_backup.json')
 
 # Function to validate and download image
-def validate_and_download_image(product, url):
+def validate_and_download_image(product, url, version=0):
     try:
         response = requests.get(url)
         response.raise_for_status()
         img = Image.open(BytesIO(response.content))
         img_format = img.format.lower()
-        img_path = os.path.join("product_images", f"{product}.{img_format}")
+        img_path = os.path.join("product_images", f"{product}_{version}.{img_format}")
         img.save(img_path)
+        width, height = img.size
+        if width < 100 or height < 100: 
+          return False, None, None
         return True, img_path, url
     except (requests.RequestException, UnidentifiedImageError) as e:
         print(f"Error fetching image from {url}: {e}")
@@ -53,22 +56,32 @@ os.makedirs("product_images", exist_ok=True)
 updated_products = []
 for product, details in product_definitions.items():
     url = details["image_url"]
+    i=0
+    j=0
     while True:
         success, image_path, final_url = validate_and_download_image(product, url)
         if success:
-            product_definitions[product]["image_url"] = final_url
-            product_definitions[product]["file_path"] = image_path
-            updated_products.append(product)
-            print(f"Downloaded image for {product}: {final_url}")
-            break
+            if i==0:
+              product_definitions[product]["image_url"] = final_url
+              product_definitions[product]["file_path"] = image_path
+              updated_products.append(product)
+              print(f"Downloaded image for {product}: {final_url}")
+              i+=1
+              alternative_url = search_alternative_image_url(product)
+              validate_and_download_image(product, alternative_url,1)
+              alternative_url = search_alternative_image_url(product)
+              validate_and_download_image(product, alternative_url,2)
+              break
         else:
             print(f"Searching for alternative URL for {product}...")
             alternative_url = search_alternative_image_url(product)
             if alternative_url:
                 url = alternative_url
             else:
-                print(f"Could not find a valid URL for {product}")
-                break
+                j+=1
+                if j==2:
+                  print(f"Could not find a valid URL for {product}")
+                  break
 
 # Save the updated product_definitions.json
 with open('product_definitions.json', 'w') as f:

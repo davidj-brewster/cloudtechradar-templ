@@ -3,21 +3,18 @@
         "BigQuery",
         "Kubernetes Engine GKE",
         "Cloud Storage",
-        "Cloud SQL",
         "Grafana OSS",
-        "Prometheus",
         "Gradle",
         "VictoriaMetrics",
         "GitHub",
-        "MongoDB Atlas",
         "Terraform+ArgoCD"
     ],
     "evaluation": [
         "AI Platform",
         "Dataflow",
+        "Cloud SQL",
         "Dataproc",
-        "Harbor",
-        "Nexus",
+        "MongoDB Atlas",
         "GKE Autopilot"
     ],
     "hold": [
@@ -25,16 +22,19 @@
         "Grafana Cloud",
         "AlloyDB",
         "Firestore",
+        "Harbor",
+        "Nexus",
         "Container Registry",
         "Compute Engine",
+        "Prometheus",
         "Cloud Run",
         "Cloud Build",
-        "Jenkins"
-    ],
-    "retire": [
+        "Jenkins",
         "Filestore",
         "Cloud Functions",
-        "Artifact Registry",
+        "Artifact Registry"
+    ],
+    "retire": [
         "Graphite/StatsD"
     ]
 }

@@ -2,7 +2,7 @@
     "BigQuery": {
         "name": "BigQuery",
         "url": "https://cloud.google.com/bigquery",
-        "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQaUjwKum3ZzJ3RtnVYH7s9WKq4FtdFVBL2xYm887nHT_W2YkWlDdrPVbh72g&s",
+        "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQjEWgqE9rUOcTX5Nv7BEgG-yrSsy3_I6jCJiclOxN6rUJC4N4y9f2J1mZboKE&s",
         "file_path": "product_images/BigQuery.png",
         "keywords": "data warehouse",
         "description": "Highly scalable, serverless data warehouse for big data",
@@ -58,8 +58,8 @@
     "Cloud Storage": {
         "name": "Cloud Storage",
         "url": "https://cloud.google.com/storage",
-        "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS_SSxjQlcGPyujHaWz2F4oQ4Aei0zJBUEySLwPM4PS-Yu6BdWOuGCq_l2QGA&s",
-        "file_path": "product_images/Cloud Storage and Databases.jpeg",
+        "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQkkNVztdKNKQTjGIsVmMEA-nne7A1aXU56TO9Ro06_9ykv4yLbr-8h0jpEbw&s",
+        "file_path": "product_images/Cloud Storage.jpeg",
         "keywords": "scalable object storage",
         "description": "Secure, durable, and scalable object storage",
         "example_use_cases": [
@@ -76,7 +76,7 @@
     "Filestore": {
         "name": "Filestore",
         "url": "https://cloud.google.com/filestore",
-        "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRHIVtSgCQk2gvD92_iRwyDmWVGCKW-SOoi2MP1hq2oIgP4idk-MgOJaNT37A&s",
+        "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRp_ND47sCp1ERIccciI53sH0B2mmRxvubwDTEa0Mc_Y4L18NG3H_RW8dVS8xc&s",
         "file_path": "product_images/Filestore.jpeg",
         "keywords": "file storage",
         "description": "High performance POSIX filesystem storage",
@@ -154,7 +154,7 @@
     "Cloud Run": {
         "name": "Cloud Run",
         "url": "https://cloud.google.com/run",
-        "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTFSLCLTJEOSfYPwAf_zVMMjxGxOsHHPS6QbcozhNkx7KPqP4qQ0aXiroNzng&s",
+        "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQK9_RXB7MQ8hDyY6r9xuSelkD5ZzjNkAjGg0aNn7VQeJCEKN79VICG7aiPEjk&s",
         "file_path": "product_images/Cloud Run.png",
         "keywords": "Kubernetes containers",
         "description": "Run stateless containers on compute instances that scale on demand",
@@ -197,8 +197,8 @@
     "Container Registry": {
         "name": "Container Registry",
         "url": "https://cloud.google.com/container-registry",
-        "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSKWUE1UmJOutNWZarGZWOlPzM52WsCYV9YmZ6nXcfCrGNKbEWucebPq7uN7Fw&s",
-        "file_path": "product_images/Container Registry.jpeg",
+        "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS3ijpzGkMmdn2Sq1O1FozN0lOMFUb2jXf2QffZ9t_MwcG5sJoKRuIhgg7Ayw&s",
+        "file_path": "product_images/Container Registry.png",
         "keywords": "Docker artifact registry",
         "description": "Private Docker image storage on GCP",
         "example_use_cases": [
@@ -239,7 +239,7 @@
     "MongoDB Atlas": {
         "name": "MongoDB Atlas",
         "url": "https://www.mongodb.com/cloud/atlas",
-        "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTo1tNPrBYbrcPRzmLJDjIeaOvMoSwCEoDjUNPW9TaineGRiBIjhlhen_YTmw&s",
+        "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQcubgKyurjTwk8Rd5_zWkPzwxk1UUP64yyxbxowCHG1Ihlzsn_OHHAkFpCX&s",
         "file_path": "product_images/MongoDB Atlas.png",
         "keywords": "NoSQL databases",
         "description": "Managed MongoDB service",
@@ -266,8 +266,8 @@
     "Firestore": {
         "name": "Firestore",
         "url": "https://cloud.google.com/firestore",
-        "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcStYThxNmgkxSSf_tXRfXdkvxVGOAdsgcbbe_vlBE-KSQS790ibabBMkSmTsaA&s",
-        "file_path": "product_images/Firestore.jpeg",
+        "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRMTE5YRJssRadGAxGlTUgU1yIV4S-NP153THrgrqA2sOpscNCDPirGtnJ0VQ&s",
+        "file_path": "product_images/Firestore.png",
         "keywords": "NoSQL document database",
         "description": "Document database for automatic scaling and performance",
         "example_use_cases": [
@@ -308,8 +308,8 @@
     "Grafana OSS": {
         "name": "Grafana OSS",
         "url": "https://grafana.com/oss/grafana/",
-        "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ7JRkVBbiVNzOU2231kfbJHOQVte46Z5BgzgtFohaDquMEB-UEYM3B6ONO8g&s",
-        "file_path": "product_images/Grafana OSS.jpeg",
+        "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQo3TSp0-vaoF-lPx7VzumGkGWtzp8SCs1miFFIH0ex4tYWiXWkqsOdHljOoQ&s",
+        "file_path": "product_images/Grafana OSS.png",
         "keywords": "monitoring dashboards",
         "description": "Open-source platform for monitoring and observability",
         "example_use_cases": [
@@ -323,8 +323,8 @@
     "Grafana Cloud": {
         "name": "Grafana Cloud",
         "url": "https://grafana.com/products/cloud/",
-        "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQZAZ5LwUPpIkVpy91r5O0jxmm6XD4mfvk6Vs90_Pqy_Je8HtsJBGAYtNij3H4&s",
-        "file_path": "product_images/Grafana Cloud.jpeg",
+        "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQGQRngt37lq6ndj5-TCy9TYB6NjZIPcmAMhm0a23oUmA129FQ59Wc8h-qgPLM&s",
+        "file_path": "product_images/Grafana Cloud.png",
         "keywords": "managed Cloud observability",
         "description": "Enterprise service for storing and discovering metrics, logs, and traces plus alerting",
         "example_use_cases": [
@@ -338,7 +338,7 @@
     "Prometheus": {
         "name": "Prometheus",
         "url": "https://prometheus.io",
-        "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTREBeDZCXLuqONtI-X-Lnt1ZZ-3nNx4frGPH5SbMztuEDYLy5a4x1bwTQYUpA&s",
+        "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQJr5RUjnwcBPM4eFrH_SDy0kk-7lT6WdKaLUOserZodDMY2VuoA2ksW9pc-tM&s",
         "file_path": "product_images/Prometheus.jpeg",
         "keywords": "metrics monitoring alerting",
         "description": "Monitoring and alerting toolkit for metrics",
@@ -353,7 +353,7 @@
         "name": "VictoriaMetrics",
         "url": "https://victoriametrics.com/",
         "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT4rg5Q5zJcNjcGW4vkDOa-alz-86Q1hJtUZ_wXk27oGwU7n6o40BaGc215dw&s",
-        "file_path": "product_images/VictoriaMetrics OSS.png",
+        "file_path": "product_images/VictoriaMetrics.png",
         "keywords": "prometheus compatible metrics",
         "description": "Open-source time series database for metrics and alerts, compatible with PromQL",
         "example_use_cases": [
@@ -368,7 +368,7 @@
     "Gradle": {
         "name": "Gradle",
         "url": "https://gradle.org",
-        "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT80DXKdwKFwglBV3xAGym7oh5POIL07jPRKs0OPYoWwngLGwzD4VucCQlu1Jw&s",
+        "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcShXf8jXsq6UG5qRSRcy64smTJ-I7eLdZP-UWmaYpFOUwR-pG3NH-ZggMedr3o&s",
         "file_path": "product_images/Gradle.png",
         "keywords": "build automation",
         "description": "Build automation tooling for Java and other languages",
@@ -399,7 +399,7 @@
         "name": "Nexus",
         "url": "https://www.sonatype.com/products/repository-oss",
         "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1-3D54bzglTQ_POeHYtd9XHh8PCrJ2qyFUZlJYhXnLiT4sBBTeDy3UqqZOg&s",
-        "file_path": "product_images/Nexus Repository OSS.png",
+        "file_path": "product_images/Nexus.png",
         "keywords": "artifact repository",
         "description": "Artifact repository manager for binaries and build artifacts",
         "example_use_cases": [
@@ -428,8 +428,8 @@
     "Terraform+ArgoCD": {
         "name": "Terraform+ArgoCD",
         "url": "https://www.terraform.io",
-        "image_url": "",
-        "file_path": "",
+        "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQsGzuSKlWrAWJ5_5bEf-q2FS_TMiLqN-Rz9sIwXXcwp-14lac35her-YEtjsc&s",
+        "file_path": "product_images/Terraform+ArgoCD.jpeg",
         "keywords": "infra-as-code",
         "description": "Infrastructure as code automation tooling",
         "example_use_cases": [

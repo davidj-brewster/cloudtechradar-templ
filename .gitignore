@@ -7,7 +7,8 @@ cloud-tech-radar/product_images/*
 cloud-tech-radar/*.json
 cloud-tech-radar/product_definitions.json
 cloud-tech-radar/product_definitions.json
-# *.json
+cloud-tech-radar/output
+cloud-tech-radar/output/*
 product_images
 *.svg
 *.png

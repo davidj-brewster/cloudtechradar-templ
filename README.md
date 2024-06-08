@@ -14,19 +14,21 @@ This project generates a graphical representation of a cloud tech radar, categor
 
 - Python 3.x
 - Python libraries: `requests`, `PIL`, `matplotlib`
+- Font file Roboto-Regular.ttf
+
 
 ## Installation
 
 1. **Clone the repository:**
     ```bash
-    git clone https://github.com/yourusername/cloud-tech-radar.git
+    git clone https://github.com/rg-dbrewste/cloud-tech-radar.git
     cd cloud-tech-radar
     ```
 
 2. **Set up a virtual environment:**
     ```bash
     python -m venv venv
-    source venv/bin/activate   # On Windows use `venv\Scripts\activate`
+    source venv/bin/activate
     ```
 
 3. **Install the required Python libraries:**
@@ -37,7 +39,7 @@ This project generates a graphical representation of a cloud tech radar, categor
 ## Usage
 
 1. **Configure the products and classifications:**
-    - Edit `product_definitions.json` to define the products with their names, URLs, and image URLs.
+    - Edit `product_definitions.json` to define the products with their names, URLs. You don't need to search for the image URLs but can instead use the `update_images.py` script which will search for images for the products in your configuration and download some images to product_images subdirectory.
     - Edit `tech_radar_classifications.json` to classify the products into the desired categories.
 
 2. **Run the script:**
@@ -82,6 +84,23 @@ Example:
     "evaluation": [],
     "retire": []
 }
+
+### `tech_radar_classifications.json`
+
+This file classifies the products into categories: adopt, evaluation, hold, and retire. 
+Example:
+
+{
+    "adopt": [
+        "BigQuery"
+    ],
+    "hold": [
+        "Firestore"
+    ],
+    "evaluation": [],
+    "retire": []
+}
+
 
 ## Contributing
 
