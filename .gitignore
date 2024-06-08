@@ -12,7 +12,9 @@ cloud-tech-radar/tech_radar_classifications.json
 cloud-tech-radar/fonts
 cloud-tech-radar/fonts/*
 cloud-tech-radar/output
-cloud-tech-radar/output/*
+cloud-tech-radar/output/*.mmc
+cloud-tech-radar/output/*.png
+cloud-tech-radar/output/*.json
 product_images
 *.svg
 *.png
