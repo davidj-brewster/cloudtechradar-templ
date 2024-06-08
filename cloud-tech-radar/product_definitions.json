@@ -415,8 +415,8 @@
     },
     "Graphite/StatsD": {
         "name": "Graphite/StatsD",
-        "url": "https://www.sonatype.com/products/repository-oss",
-        "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1-3D54bzglTQ_POeHYtd9XHh8PCrJ2qyFUZlJYhXnLiT4sBBTeDy3UqqZOg&s",
+        "url": "https://cloud.google.com/monitoring/agent/plugins/statsd",
+        "image_url": "",
         "file_path": "",
         "keywords": "metrics monitoring",
         "description": "Legacy metrics solution still used by community",
@@ -427,14 +427,15 @@
     },
     "Terraform+ArgoCD": {
         "name": "Terraform+ArgoCD",
-        "url": "",
+        "url": "https://www.terraform.io",
         "image_url": "",
         "file_path": "",
         "keywords": "infra-as-code",
         "description": "Infrastructure as code automation tooling",
         "example_use_cases": [
             "Clusters",
-            "GKE environments"
+            "GKE environments",
+            "CI/CD"
         ],
         "category": "DevOps"
     }
