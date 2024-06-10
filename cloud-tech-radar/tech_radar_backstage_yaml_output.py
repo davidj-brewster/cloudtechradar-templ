@@ -4,20 +4,23 @@ import json
 with open('product_definitions.json', 'r') as f:
     product_definitions = json.load(f)
 
-with open('tech_radar_product_categories.json', 'r') as f:
+with open('product_categories.json', 'r') as f:
     category_titles = json.load(f)
 
-with open('tech_radar_classifications.json', 'r') as f:
+with open('radar_classifications.json', 'r') as f:
     classifications = json.load(f)
 
+# TODO: this data is already in radar_classifications.json...
 # Define quadrants based on category titles
 quadrants = [
-    { "id": "data_ml", "name": "Data and Machine Learning" },
-    { "id": "storage", "name": "Storage Solutions" },
-    { "id": "compute", "name": "Compute and GKE" },
-    { "id": "build_ci", "name": "Build and Deployment" }
+    { "id": "data_ml", "name": "Big Data" },
+    { "id": "storage", "name": "Storage and Databases" },
+    { "id": "compute", "name": "Compute and Web Platform" },
+    { "id": "build_ci", "name": "DevOps" },
+    { "id": "observability", "name": "Observability" }
 ]
 
+# TODO: This can be dynamic based on what an organisation wants to 
 # Define rings
 rings = [
     { "id": "adopt", "name": "Adopt", "color": "#93c47d" },
@@ -27,11 +30,13 @@ rings = [
 ]
 
 # Map categories to quadrants
+# AGAIN, this is just lazy me .. will be fixed 
 category_to_quadrant = {
-    "Data / ML": "data_ml",
-    "Storage": "storage",
-    "Compute": "compute",
-    "Build / CI": "build_ci"
+    "Big Data": "data_ml",
+    "Storage and Databases": "storage",
+    "Compute and Web Platform": "compute",
+    "DevOps": "build_ci",
+    "Observability": "observability",
 }
 
 # Transform entries
