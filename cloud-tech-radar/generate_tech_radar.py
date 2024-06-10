@@ -1,5 +1,4 @@
 import json
-import math
 import os
 import requests
 import textwrap
@@ -16,7 +15,6 @@ def download_font(url, font_path):
         else:
             raise Exception(f"Failed to download font from {url} (status code: {response.status_code})")
 
-CANVAS_SIZE=1800
 placed_entries=[]
 # Download the font if necessary
 font_url = "https://github.com/google/fonts/raw/main/apache/roboto/Roboto-Regular.ttf" #needs updating
@@ -26,8 +24,8 @@ download_font(font_url, font_path)
 # Load the font with error handling
 try:
     large_font = ImageFont.truetype(font_path, 32)
-    font = ImageFont.truetype(font_path, 18)
-    small_font = ImageFont.truetype(font_path, 12)
+    font = ImageFont.truetype(font_path, 15)
+    small_font = ImageFont.truetype(font_path, 11)
 except IOError:
     print("Error loading font. Using default font.")
     font = ImageFont.load_default(28)
@@ -38,65 +36,64 @@ except IOError:
 with open('product-definitions.json', 'r') as f:
     product_definitions = json.load(f)
 
-with open('radar-categories.json', 'r') as f:
+with open('radar_product-categories.json', 'r') as f:
     category_titles = json.load(f)
 
-with open('tr_product-radarstatus.json', 'r') as f:
+with open('radar_classifications.json', 'r') as f:
     classifications = json.load(f)
 
 # Define quadrants based on category titles, this is a bit all the wrong way around
-# TODO: This should all be taken by tr_product-classifications.json but I need to refactor it
 quadrants = [
-    { "index": 0, "id": "data_ml", "quadrant_name": "Data Platform" },
-    { "index": 1, "id": "storage", "quadrant_name": "Storage and Databases" },
-    { "index": 2, "id": "compute", "quadrant_name": "Compute and Web Platform" },
-    { "index": 3, "id": "build_ci", "quadrant_name": "DevOps" },
-    { "index": 4, "id": "observability", "quadrant_name": "Observability" }
+    { "id": "data_ml", "name": "Data Platform" },
+    { "id": "storage", "name": "Storage and Databases" },
+    { "id": "compute", "name": "Compute and Web Platform" },
+    { "id": "build_ci", "name": "DevOps" },
+    { "id": "observability", "name": "Observability" }
 ]
 
 # Define rings to appear on the radar for "status" of the tech
 rings = [
-    { "index": 0, "id": "adopt", "name": "Adopt", "color": "#93c47d" },
-    { "index": 1, "id": "evaluation", "name": "Assess", "color": "#fbdb84" },
-    { "index": 2, "id": "hold", "name": "Hold", "color": "#efafa9" },
-    { "index": 3, "id": "retire", "name": "Retire", "color": "#a32d01" }
+    { "id": "adopt", "name": "Adopt", "color": "#93c47d" },
+    { "id": "evaluation", "name": "Assess", "color": "#fbdb84" },
+    { "id": "hold", "name": "Hold", "color": "#efafa9" },
+    { "id": "retire", "name": "Retire", "color": "#a32d01" }
 ]
 
 # Map categories to slices of the circular tech radar
 category_to_quadrant = {
-    "Data Platform": 0,
-    "Storage and Databases": 1,
-    "Compute and Web Platform": 2,
-    "DevOps": 3,
-    "Observability": 4
+    "Data Platform": "data_ml",
+    "Storage and Databases": "storage",
+    "Compute and Web Platform": "compute",
+    "DevOps": "build_ci",
+    "Observability": "observability"
 }
 
 # Map products to rings based on classifications json file
 product_to_ring = {}
-for id, products in classifications.items():
-     for product in products:
-         product_to_ring[product] = id
-         print(product,id)
+for classification, products in classifications.items():
+    for product in products:
+         product_to_ring[product] = classification
+         print (product, classification)
+
+# Function to clean the text because this file format is particularly sensitive to escape chars etc
+def clean_text(text):
+    return text#.replace('(', '').replace(')', '').strip()
 
 # Transform entries
 entries = []
 for product_key, product in product_definitions.items():
-    quadrant_id = category_to_quadrant.get(product.get('category'))
+    quadrant = category_to_quadrant.get(product.get('category'))
     keywords = product.get('keywords', []).join(' ')
-    ring = product_to_ring.get(product_key)
     entry = {
         "id": product_key,
         "title": product['name'],
         "description": product.get('description', ''),
         "url": product.get('url', ''),
         "file_path": product.get('file_path', ''),
-        "quadrant_id": quadrant_id,
-        "quadrand_name": product.get('category'),
+        "quadrant": quadrant,
         "keywords": keywords,
-        "ring": ring,
         "image_url": product.get('image_url', '')
     }
-    print (entry)
     entries.append(entry)
 
 # Construct the final data model
@@ -125,11 +122,11 @@ def add_images(entry, draw,image, x, y):
             else:
                 raise Exception(f"No local image or image URL for {entry['id']}")
 
-        opacity_level = 0 #doesn't seem to work
+        opacity_level = 25 #doesn't seem to work
         img = Image.open(local_img_path).convert("RGBA")
         img_w, img_h = img.size
         img_ratio = img_w / img_h
-        new_height = 38  #vary based on the content in your tech radar..
+        new_height = 40  #vary based on the content in your tech radar..
         new_width = int(new_height * img_ratio)
         img2 = img.resize((new_width, new_height), Image.Resampling.LANCZOS)
         
@@ -148,22 +145,21 @@ def add_images(entry, draw,image, x, y):
 
 # Draw the tech radar
 def draw_tech_radar(tech_radar):
-    width, height = CANVAS_SIZE, CANVAS_SIZE# Set canvas size
+    width, height = 1760, 1400# Set canvas size
     img = Image.new('RGB', (width, height), (255, 255, 255))
     draw = ImageDraw.Draw(img)
     random.seed(200) 
     center_x, center_y =((width // 2), (height // 2))
-    ring_radius = [360, 475, 595, 680]
+    ring_radius = [350, 475, 595, 680]
 
     quadrant_angle_step = 360 / len(tech_radar['quadrants'])
     
     # Draw quadrants and their titles
-    for i, quadrant in enumerate(tech_radar.items()):
-        angle = i *  quadrant_angle_step
-        name = quadrants.get('quadrant_name')
+    for i, quadrant in enumerate(tech_radar['quadrants']):
+        angle = i * quadrant_angle_step
         x = center_x + ring_radius[-1] * cos(radians(angle + quadrant_angle_step / 2))
         y = center_y + ring_radius[-1] * sin(radians(angle + quadrant_angle_step / 2)) 
-        draw.text((x, y), quadrant.quadrand_name, font=large_font, fill="black", anchor="mm")
+        draw.text((x, y), quadrant['name'], font=large_font, fill="black", anchor="mm")
         placed_entries.append((x,y))
 
     # Draw rings and their titles
@@ -174,49 +170,65 @@ def draw_tech_radar(tech_radar):
         placed_entries.append((center_x + radius, center_y))
         placed_entries.append((center_x + radius-10, center_y))
 
-    # Calculate the number of products in each quadrant at each ring level
-    # Calculate the number of products in each quadrant at each ring level
-    quadrant_ring_counts = {q['id']: {i: 0 for i in range(len(ring_radius))} for q in quadrants}
-
     for entry in tech_radar['entries']:
-        quadrant_id = entry['quadrant_id']
-        ring_index = rings.index(next(r for r in rings if r['id'] == entry['ring']))
-        if quadrant_id in quadrant_ring_counts:
-            quadrant_ring_counts[quadrant_id][ring_index] += 1
-
-    print(quadrant_ring_counts)
-
-    # Place each product with evenly spaced angles
-    #for quadrant_index, quadrant in enumerate(quadrants):
-    for ring_index, radius in enumerate(ring_radius):
-        products_in_quadrant_ring = [
-            entry for entry in tech_radar 
-            if entry['quadrant_id'] == quadrant['id'] and entry['ring_index'] == ring_index
-        ]
-        
-        if not products_in_quadrant_ring:
+        # Determine quadrant and ring index
+        quadrant_index = next((i for i, q in enumerate(tech_radar['quadrants']) if q['id'] == entry['quadrant']), None)
+        if quadrant_index is None:
+            print(f"Warning: Quadrant {entry['quadrant']} not found for entry {entry['title']}")
             continue
-        
-        # Use the already calculated quadrant_angle_step
-        angle_offset = quadrant_angle_step / len(products_in_quadrant_ring)
-        
-        for i, entry in enumerate(products_in_quadrant_ring):
-            angle = quadrant_index * quadrant_angle_step + (i * angle_offset)
-            text_x = center_x + radius * math.cos(math.radians(angle))
-            text_y = center_y + radius * math.sin(math.radians(angle))
-            
-            # Place image and text
-            img_x, img_y, img_w, img_h = add_images(entry, draw, img, text_x, text_y)
-            if img_x is not None:
-                placed_entries.append((text_x, text_y))
-                draw.text((img_x + img_w / 2 + 5 , img_y - img_h / 2 + 5), entry['name'], font=font, fill="black", anchor="mm")
-                draw.text((img_x - img_w / 2 - 12, img_y + img_h / 2 + 12), f"{textwrap.fill(entry['description'], 24)}", font=small_font, fill="black")
-                placed_entries.append((img_x + img_w / 2 + 5, img_y - img_h / 2 + 5))
-                placed_entries.append((img_x - img_w / 2 - 12 , img_y + img_h / 2 + 12))
+    
+        product_name = entry["title"]
+        ring_name = product_to_ring.get(product_name, 'hold')
+        ring_index = next((i for i, r in enumerate(tech_radar['rings']) if r['id'] == ring_name), None)
+        if ring_index is None:
+            print(f"Warning: Ring {ring_name} not found for entry {product_name}")
+            continue
+    
+        # Calculate angle and radius
+        angle_start = quadrant_index * quadrant_angle_step
+        angle_end = angle_start + quadrant_angle_step
+        angle = (angle_start + angle_end) / 2  # Center angle of the quadrant section
+    
+        if ring_index == 0:
+            # Special case for the innermost ring
+            radius = random.uniform(0, ring_radius[0] + 15)
+        else:
+            radius = ring_radius[ring_index] 
+    
+        # Adjust angle slightly to avoid exact overlap
+        angle += random.uniform(-quadrant_angle_step / 10, quadrant_angle_step / 10)
+        x = center_x + radius * cos(radians(angle))
+        y = center_y + radius * sin(radians(angle))
+    
+        # Collision detection and resolution
+        i = 0
+        max_attempts = 2000 # Limit attempts to prevent infinite loop
+        while any(abs(px - x) < 95 and abs(py - y) < 92 for px, py in placed_entries) and i < max_attempts:
+            angle += random.uniform(-8, 8)  # Small random adjustment
+            x = center_x + radius * cos(radians(angle))
+            y = center_y + radius * sin(radians(angle))
+            if abs(y) < 250:
+              x =random.randint(-800,800)
+              y=random.randint(-800, 800)
+            if abs(x) < 300:
+              x=555
+              y=666
+            i += 1
+    
+        if i >= max_attempts:
+            print(f"Warning: Max attempts reached for {entry['title']} at {quadrant_index}, {ring_index}")
+    
+        # Place image and text
+        img_x, img_y, img_w, img_h = add_images(entry, draw, img, x, y)
+        if img_x is not None:
+            placed_entries.append((x, y))
+            draw.text((img_x - img_w / 2 + 30 , img_y - img_h + 25), entry['title'], font=font, fill="black", anchor="mm")
+            draw.text((img_x-img_w/2-10, img_y + img_h + 3), f"{textwrap.fill(entry['description'],24)}", font=small_font, fill="black")
+            placed_entries.append((img_x-img_w/2+1, img_y + img_h +15))
 
-    img.save('output/tech_radar.png')
+            img.save('output/tech_radar.png')
     print("Tech Radar image saved to tech_radar.png")
 
-
 draw_tech_radar(tech_radar)
+
 
