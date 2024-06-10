@@ -1,3 +1,4 @@
+# This file is where you define each product and some metadata about it that can be used by the script that generate diagrams or provide the template code for other systems (Mermaid, Backstage) to represent your tech radar programmatically. Note that image_url, category, and file_path are optional because there are helper processes which will calculate the appropriate value, downloading source files for images as needed
 {
     "BigQuery": {
         "name": "BigQuery",
