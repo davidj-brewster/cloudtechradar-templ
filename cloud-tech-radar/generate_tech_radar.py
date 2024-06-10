@@ -23,9 +23,9 @@ download_font(font_url, font_path)
 
 # Load the font with error handling
 try:
-    large_font = ImageFont.truetype(font_path, 32)
-    font = ImageFont.truetype(font_path, 15)
-    small_font = ImageFont.truetype(font_path, 11)
+    large_font = ImageFont.truetype(font_path, 30)
+    font = ImageFont.truetype(font_path, 18)
+    small_font = ImageFont.truetype(font_path, 10)
 except IOError:
     print("Error loading font. Using default font.")
     font = ImageFont.load_default(28)
@@ -122,17 +122,17 @@ def add_images(entry, draw,image, x, y):
             else:
                 raise Exception(f"No local image or image URL for {entry['id']}")
 
-        opacity_level = 25 #doesn't seem to work
+        opacity_level = 20 #doesn't seem to work
         img = Image.open(local_img_path).convert("RGBA")
         img_w, img_h = img.size
         img_ratio = img_w / img_h
-        new_height = 40  #vary based on the content in your tech radar..
+        new_height = 38 #vary based on the content in your tech radar..
         new_width = int(new_height * img_ratio)
-        img2 = img.resize((new_width, new_height), Image.Resampling.LANCZOS)
+        img = img.resize((new_width, new_height), Image.Resampling.LANCZOS)
         
         img_x = x - new_width // 2
         img_y = y - new_height // 2
-        image.paste(img2, (int(img_x), int(img_y)))
+        image.paste(img, (int(img_x), int(img_y)))
         placed_entries.append((img_x,img_y))
         return int(img_x), int(img_y), new_width, new_height
     except FileNotFoundError:
@@ -145,12 +145,12 @@ def add_images(entry, draw,image, x, y):
 
 # Draw the tech radar
 def draw_tech_radar(tech_radar):
-    width, height = 1760, 1400# Set canvas size
+    width, height = 1900, 1900# Set canvas size
     img = Image.new('RGB', (width, height), (255, 255, 255))
     draw = ImageDraw.Draw(img)
-    random.seed(200) 
+    random.seed(2332200) 
     center_x, center_y =((width // 2), (height // 2))
-    ring_radius = [350, 475, 595, 680]
+    ring_radius = [380, 520, 660, 800]
 
     quadrant_angle_step = 360 / len(tech_radar['quadrants'])
     
@@ -191,7 +191,7 @@ def draw_tech_radar(tech_radar):
     
         if ring_index == 0:
             # Special case for the innermost ring
-            radius = random.uniform(0, ring_radius[0] + 15)
+            radius = random.uniform(0, ring_radius[0] + 5)
         else:
             radius = ring_radius[ring_index] 
     
@@ -202,17 +202,21 @@ def draw_tech_radar(tech_radar):
     
         # Collision detection and resolution
         i = 0
-        max_attempts = 2000 # Limit attempts to prevent infinite loop
-        while any(abs(px - x) < 95 and abs(py - y) < 92 for px, py in placed_entries) and i < max_attempts:
-            angle += random.uniform(-8, 8)  # Small random adjustment
+        max_attempts = 8000 # Limit attempts to prevent infinite loop
+        while any(abs(px - x) < 70 and abs(py - y) < 80 for px, py in placed_entries) and i < max_attempts:
+            angle += random.uniform(-12, 12)  # Small random adjustment
             x = center_x + radius * cos(radians(angle))
             y = center_y + radius * sin(radians(angle))
-            if abs(y) < 250:
-              x =random.randint(-800,800)
-              y=random.randint(-800, 800)
-            if abs(x) < 300:
-              x=555
-              y=666
+            if abs(y) < 90 and abs(x) < 200:
+              rand1=int(random.randint(-200,200)*2)
+              rand2=int(random.randint(-800,800)/2)
+              x =rand1
+              y=rand2
+            if abs(x) < 90 and abs(y) < 200:
+              rand1=int(random.randint(-390,390)*6/5)
+              rand2=int(random.randint(-390,390)*6/5)
+              x =rand1
+              y=rand2
             i += 1
     
         if i >= max_attempts:
@@ -222,9 +226,10 @@ def draw_tech_radar(tech_radar):
         img_x, img_y, img_w, img_h = add_images(entry, draw, img, x, y)
         if img_x is not None:
             placed_entries.append((x, y))
-            draw.text((img_x - img_w / 2 + 30 , img_y - img_h + 25), entry['title'], font=font, fill="black", anchor="mm")
-            draw.text((img_x-img_w/2-10, img_y + img_h + 3), f"{textwrap.fill(entry['description'],24)}", font=small_font, fill="black")
-            placed_entries.append((img_x-img_w/2+1, img_y + img_h +15))
+            draw.text((img_x + img_w / 2 , img_y - img_h/2 + 8), entry['title'], font=font, fill="black", anchor="mm")
+            placed_entries.append((img_x+img_w/2+5, img_y + img_h +8))
+            draw.text((img_x-img_w/2-8, img_y + img_h + 8), f"{textwrap.fill(entry['description'],24)}", font=small_font, fill="black")
+            placed_entries.append((img_x-img_w/2-8, img_y + img_h/2 +30 ))
 
             img.save('output/tech_radar.png')
     print("Tech Radar image saved to tech_radar.png")
