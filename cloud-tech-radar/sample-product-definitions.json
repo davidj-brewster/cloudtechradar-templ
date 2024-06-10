@@ -1,0 +1,133 @@
+{
+    "BigQuery": {
+        "name": "BigQuery",
+        "url": "https://cloud.google.com/bigquery",
+        "image_url": "",
+        "keywords": "data warehouse",
+        "description": "Highly scalable, serverless data warehouse for big data",
+        "example_use_cases": [
+            "Data analytics",
+            "Business intelligence",
+        ]
+    },
+    "AI Platform": {
+        "name": "AI Platform",
+        "url": "https://cloud.google.com/ai-platform",
+        "image_url": "",
+        "keywords": "machine learning",
+        "description": "Service for building and deploying machine learning models",
+    },
+    "Cloud Storage": {
+        "name": "GCS Cloud Storage",
+        "url": "https://cloud.google.com/storage",
+        "image_url": "",
+        "keywords": "object storage",
+        "description": "Secure, durable and scalable object storage",
+        "example_use_cases": [
+            "Object storage",
+            "Archival/backup storage",
+            "Batch data"
+        ]
+    },
+    "GKE": {
+        "name": "Kubernetes Engine GKE",
+        "url": "https://cloud.google.com/kubernetes-engine",
+        "image_url": "",
+        "keywords": "Kubernetes orchestration",
+        "description": "Running and managing Kubernetes clusters",
+        "example_use_cases": [
+            "Realtime compute",
+            "Batch processing compute",
+            "Scheduled compute jobs",
+            "Service-mesh microservices",
+            "Larger workloads"
+        ],
+        "category": "Compute and Web Platform"
+    },
+    "Autopilot clusters": {
+        "name": "GKE Autopilot Clusters",
+        "url": "https://cloud.google.com/kubernetes-engine",
+        "image_url": "",
+        "keywords": "Managed kubernetes",
+        "description": "Cluster, Pod and container environment with reduced overhead",
+        "example_use_cases": [
+            "Scheduled computations",
+            "Unpredictable load-patterns"
+        ]
+    },
+    "Compute Engine": {
+        "name": "Compute Engine",
+        "url": "https://cloud.google.com/compute",
+        "image_url": ":,
+        "keywords": "virtual machines",
+        "description": "Scalable virtual machines for compute workloads",
+        "example_use_cases": [
+            "Compute and Web Platform workloads",
+            "Custom VMs",
+            "Vertical scaling workloads"
+        ]
+    },
+    "Cloud Run": {
+        "name": "Cloud Run",
+        "url": "https://cloud.google.com/run",
+        "image_url": "",
+        "keywords": "Kubernetes containers",
+        "description": "Run stateless containers on compute instances that scale on demand",
+        "example_use_cases": [
+            "Smaller stateless services",
+            "Developer branch environments",
+            "Canary deployments"
+        ],
+        "category": "Compute and Web Platform"
+    },
+    "Cloud SQL": {
+        "name": "Cloud SQL",
+        "url": "https://cloud.google.com/sql",
+        "image_url": "",
+        "keywords": "SQL databases",
+        "description": "Relational database managed service",
+        "example_use_cases": [
+            "SQL databases",
+            "Transactional apps"
+        ],
+    },
+    "GitHub": {
+        "name": "GitHub",
+        "url": "https://github.com",
+        "image_url": "",
+        "keywords": "code hosting, build Actions, Codespaces, vulnerability management",
+        "description": "Code hosting platform for version control and collaboration",
+        "example_use_cases": [
+            "Source-code version control",
+            "Code reviews",
+            "Infrastructure configuration"
+        ]
+    },
+    "Jenkins": {
+        "name": "Jenkins",
+        "url": "https://www.jenkins.io",
+        "image_url": "",
+        "file_path": "product_images/Jenkins.png",
+        "keywords": "automation server",
+        "description": "Automation server for CI/CD pipelines defined in code",
+        "example_use_cases": [
+            "Continuous integration",
+            "Continuous delivery",
+            "Build automation"
+        ]
+    },
+    "Grafana": {
+        "name": "Grafana",
+        "url": "https://grafana.com/oss/grafana/",
+        "image_url": "",
+        "keywords": "monitoring alerting dashboards",
+        "description": "Open-source platform for monitoring and observability",
+        "example_use_cases": [
+            "Dashboards",
+            "Exploring metrics logs and events",
+            "Infrastructure and service monitoring",
+            "Alert rules and routing"
+        ],
+        "category": "Observability"
+    }
+}
